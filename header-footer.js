@@ -19,11 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="carousel-item"><strong>Mise à disposition d'une voiture</strong> sur place !</span>
                     <span class="carousel-item">Transferts aéroport ou TGV (Aix, Marseille, Nice - retour compris)</span>
                 </div>
-                <div class="top-bar-contact">
-                    <a href="tel:+33695288020" class="contact-link">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
-                        <span>06 95 28 80 20</span>
-                    </a>
+                <div class="top-bar-right">
+                    <div class="top-bar-contact">
+                        <a href="tel:+33695288020" class="contact-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                            <span>06 95 28 80 20</span>
+                        </a>
+                    </div>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" id="btn-lang-fr" aria-label="Langue Française">FR</button>
+                        <span class="lang-divider">|</span>
+                        <button class="lang-btn" id="btn-lang-en" aria-label="English Language">EN</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -505,4 +512,158 @@ document.addEventListener("DOMContentLoaded", () => {
             carouselItems[currentIndex].classList.add("active");
         }, 4000);
     }
+
+    // 7. SYSTEM DE TRADUCTION MULTILINGUE (FR / EN)
+    
+    // Utilitaires de gestion des cookies de traduction
+    function setTranslateCookie(lang) {
+        const domain = window.location.hostname;
+        document.cookie = "googtrans=" + lang + "; path=/; SameSite=Lax";
+        document.cookie = "googtrans=" + lang + "; path=/; domain=" + domain + "; SameSite=Lax";
+        if (domain.includes('.')) {
+            document.cookie = "googtrans=" + lang + "; path=/; domain=." + domain + "; SameSite=Lax";
+            const parts = domain.split('.');
+            if (parts.length > 2) {
+                const parentDomain = parts.slice(-2).join('.');
+                document.cookie = "googtrans=" + lang + "; path=/; domain=." + parentDomain + "; SameSite=Lax";
+            }
+        }
+    }
+
+    function clearTranslateCookie() {
+        const domain = window.location.hostname;
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + domain + "; SameSite=Lax";
+        if (domain.includes('.')) {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domain + "; SameSite=Lax";
+            const parts = domain.split('.');
+            if (parts.length > 2) {
+                const parentDomain = parts.slice(-2).join('.');
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + parentDomain + "; SameSite=Lax";
+            }
+        }
+    }
+
+    // Déclenchement de la traduction via l'élément caché Google Translate
+    function triggerGoogleTranslate(langCode) {
+        const select = document.querySelector('select.goog-te-combo');
+        if (select) {
+            if (langCode === 'fr') {
+                let hasFr = false;
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === 'fr') {
+                        hasFr = true;
+                        break;
+                    }
+                }
+                select.value = hasFr ? 'fr' : '';
+            } else {
+                select.value = langCode;
+            }
+            select.dispatchEvent(new Event('change'));
+            return true;
+        }
+        return false;
+    }
+
+    // Application de la langue sélectionnée
+    function applyTranslation(langCode) {
+        if (langCode === 'en') {
+            setTranslateCookie('/fr/en');
+            localStorage.setItem('hlm_lang', 'en');
+        } else {
+            clearTranslateCookie();
+            localStorage.setItem('hlm_lang', 'fr');
+        }
+
+        // Mettre à jour l'affichage des boutons immédiatement
+        updateSwitcherButtons(langCode);
+
+        // Tenter d'appliquer la traduction
+        if (triggerGoogleTranslate(langCode)) {
+            // Le widget est déjà chargé, action immédiate
+        } else {
+            // Si pas encore chargé, vérifier régulièrement (polling)
+            let attempts = 0;
+            const interval = setInterval(() => {
+                attempts++;
+                if (triggerGoogleTranslate(langCode) || attempts > 30) {
+                    clearInterval(interval);
+                    updateSwitcherButtons(langCode);
+                    // Si échec du retour au français (rare), on recharge pour garantir le propre
+                    if (attempts > 30 && langCode === 'fr') {
+                        window.location.reload();
+                    }
+                }
+            }, 100);
+        }
+    }
+
+    function updateSwitcherButtons(langCode) {
+        const btnFr = document.getElementById("btn-lang-fr");
+        const btnEn = document.getElementById("btn-lang-en");
+        if (btnFr && btnEn) {
+            if (langCode === 'en') {
+                btnFr.classList.remove("active");
+                btnEn.classList.add("active");
+            } else {
+                btnFr.classList.add("active");
+                btnEn.classList.remove("active");
+            }
+        }
+    }
+
+    // Configuration des écouteurs de clics sur les boutons
+    const btnFr = document.getElementById("btn-lang-fr");
+    const btnEn = document.getElementById("btn-lang-en");
+    if (btnFr && btnEn) {
+        btnFr.addEventListener("click", (e) => {
+            e.preventDefault();
+            applyTranslation("fr");
+        });
+        btnEn.addEventListener("click", (e) => {
+            e.preventDefault();
+            applyTranslation("en");
+        });
+    }
+
+    // Mettre en surbrillance le bouton actif dès le chargement (lecture du stockage local)
+    const initialLang = localStorage.getItem('hlm_lang') || 'fr';
+    updateSwitcherButtons(initialLang);
+
+    // Injection dynamique du script Google Translate
+    function injectGoogleTranslate() {
+        // Ajout du conteneur caché requis
+        if (!document.getElementById('google_translate_element')) {
+            const el = document.createElement('div');
+            el.id = 'google_translate_element';
+            el.style.display = 'none';
+            document.body.appendChild(el);
+        }
+
+        // Callback global appelé par l'API Google
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                includedLanguages: 'fr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            // Appliquer la traduction si l'anglais était actif
+            const savedLang = localStorage.getItem('hlm_lang') || 'fr';
+            if (savedLang === 'en') {
+                applyTranslation('en');
+            }
+        };
+
+        // Ajout de la balise script
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+    }
+
+    // Exécuter l'injection
+    injectGoogleTranslate();
 });
