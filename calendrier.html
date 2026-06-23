@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier des Stages & Activités - Haut les Mains Barrême</title>
+    <meta name="description" content="Consultez le calendrier des stages de parapente, baptêmes de l'air, voyages et périodes de fermeture de l'école Haut les Mains à Barrême.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+/* ══════════════════════════════════════════════════════
+   CALENDRIER — Design premium mois unique
+══════════════════════════════════════════════════════ */
+
+.cal-wrapper {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin: 0 0 32px;
+}
+
+/* ── En-tête : navigation mois ── */
+.cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    background: linear-gradient(135deg, #0f2949 0%, #1a4080 100%);
+}
+.cal-nav-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+.cal-nav-btn:hover { background: rgba(255,255,255,0.30); }
+.cal-nav-title {
+    text-align: center;
+    flex: 1;
+}
+.cal-nav-title h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
+}
+.cal-nav-title .cal-nav-count {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+}
+
+/* ── Grille des jours ── */
+.cal-grid-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f8faff;
+    border-bottom: 1px solid var(--border-color);
+}
+.cal-grid-header span {
+    text-align: center;
+    padding: 12px 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+}
+.cal-grid-header span.weekend { color: #94a3b8; }
+
+.cal-grid-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+/* ── Case d'un jour ── */
+.cal-cell {
+    border-right: 1px solid #f0f4fa;
+    border-bottom: 1px solid #f0f4fa;
+    min-height: 96px;
+    padding: 8px 8px 6px;
+    transition: background 0.15s;
+    position: relative;
+    cursor: default;
+}
+.cal-cell:hover { background: #f8fbff; }
+.cal-cell.other-month {
+    background: #fafbfc;
+    opacity: 0.5;
+}
+.cal-cell.today {
+    background: #eff6ff;
+}
+
+.cal-day-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-radius: 50%;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+}
+.cal-cell.today .cal-day-num {
+    background: #1a4080;
+    color: white;
+    font-weight: 800;
+}
+.cal-cell.weekend-day .cal-day-num { color: #64748b; }
+.cal-cell.other-month .cal-day-num { color: #b0bec5; }
+
+/* ── Pastilles d'événements ── */
+.cal-pill {
+    display: block;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-size: 0.67rem;
+    font-weight: 700;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: filter 0.15s, transform 0.12s;
+    position: relative;
+}
+.cal-pill:hover { filter: brightness(0.9); transform: scale(1.02); }
+
+.cal-pill.stage   { background: #ede9fe; color: #5b21b6; border-left: 3px solid #7c3aed; }
+.cal-pill.bapteme { background: #dbeafe; color: #1e40af; border-left: 3px solid #3b82f6; }
+.cal-pill.voyage  { background: #fef3c7; color: #92400e; border-left: 3px solid #f59e0b; }
+.cal-pill.ferme   { background: #fee2e2; color: #991b1b; border-left: 3px solid #ef4444; }
+
+/* Continuation d'un événement (jours 2, 3…) */
+.cal-pill.continuation {
+    opacity: 0.55;
+    border-left-color: transparent;
+    border-left-width: 0;
+    padding-left: 10px;
+}
+
+/* ── Panneau d'événements du jour sélectionné ── */
+.cal-detail-panel {
+    background: #f8faff;
+    border-top: 1px solid var(--border-color);
+    padding: 20px 24px;
+    min-height: 72px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.cal-detail-empty {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    align-self: center;
+}
+.cal-detail-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+    min-width: 220px;
+    max-width: 320px;
+    flex: 1;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+}
+.cal-detail-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+.cal-detail-bar {
+    width: 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 48px;
+}
+.cal-detail-bar.stage   { background: #7c3aed; }
+.cal-detail-bar.bapteme { background: #3b82f6; }
+.cal-detail-bar.voyage  { background: #f59e0b; }
+.cal-detail-bar.ferme   { background: #ef4444; }
+
+.cal-detail-body {}
+.cal-detail-type {
+    font-size: 0.70rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 2px;
+}
+.cal-detail-type.stage   { color: #7c3aed; }
+.cal-detail-type.bapteme { color: #3b82f6; }
+.cal-detail-type.voyage  { color: #f59e0b; }
+.cal-detail-type.ferme   { color: #ef4444; }
+
+.cal-detail-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+.cal-detail-dates {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+.cal-detail-desc {
+    font-size: 0.8rem;
+    color: var(--text-body);
+    line-height: 1.5;
+}
+.cal-detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-sky, #3b82f6);
+    text-decoration: none;
+    margin-top: 6px;
+}
+.cal-detail-link:hover { text-decoration: underline; }
+
+/* ── Filtres ── */
+.cal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+}
+.cal-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 2px solid #e8edf5;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+.cal-filter-btn:hover { border-color: #c7d5ee; color: var(--text-dark); }
+.cal-filter-btn.active { background: white; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+.cal-filter-btn[data-type="all"].active    { border-color: #0f2949; color: #0f2949; }
+.cal-filter-btn[data-type="stage"].active  { border-color: #7c3aed; color: #7c3aed; }
+.cal-filter-btn[data-type="bapteme"].active{ border-color: #3b82f6; color: #1e40af; }
+.cal-filter-btn[data-type="voyage"].active { border-color: #f59e0b; color: #92400e; }
+.cal-filter-btn[data-type="ferme"].active  { border-color: #ef4444; color: #991b1b; }
+.cal-filter-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Légende ── */
+.cal-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 16px 0 24px;
+}
+.cal-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    color: var(--text-body);
+}
+.cal-legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+}
+.cal-legend-dot.stage   { background: #7c3aed; }
+.cal-legend-dot.bapteme { background: #3b82f6; }
+.cal-legend-dot.voyage  { background: #f59e0b; }
+.cal-legend-dot.ferme   { background: #ef4444; }
+
+/* ── Indicateur "Aujourd'hui" ── */
+.cal-today-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 6px 14px;
+    background: #eff6ff;
+    border-radius: 999px;
+    margin-left: auto;
+}
+.cal-today-dot {
+    width: 10px; height: 10px;
+    background: #1a4080;
+    border-radius: 50%;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 640px) {
+    .cal-cell { min-height: 58px; padding: 5px 3px 4px; }
+    .cal-day-num { width: 22px; height: 22px; font-size: 0.75rem; }
+    .cal-pill { font-size: 0.60rem; padding: 2px 4px; }
+    .cal-nav { padding: 16px 18px; }
+    .cal-nav-title h2 { font-size: 1.2rem; }
+    .cal-grid-header span { font-size: 0.64rem; padding: 8px 2px; }
+    .cal-detail-panel { padding: 16px; }
+}
+
+/* ── Info Google Calendar ── */
+.gcal-info-box {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 2px solid #86efac;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+.gcal-info-box h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #15803d;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.gcal-info-box p {
+    font-size: 0.87rem;
+    color: #166534;
+    line-height: 1.6;
+    margin: 0 0 8px;
+}
+.gcal-info-box ol {
+    font-size: 0.87rem;
+    color: #166534;
+    margin: 8px 0 0 18px;
+    line-height: 1.8;
+}
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="internal-page">
+        <div class="container">
+            <div class="internal-grid">
+
+                <article class="internal-content">
+
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a>
+                        <span>&gt;</span>
+                        <span>Calendrier</span>
+                    </nav>
+
+                    <h1>Calendrier des Stages &amp; Activités</h1>
+
+                    <div class="course-hero-details">
+                        <span class="course-badge indigo">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Planning Saison 2025-2026
+                        </span>
+                        <span class="course-badge green">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Mis à jour régulièrement
+                        </span>
+                    </div>
+
+                    <div class="lodging-intro-box">
+                        « Consultez le planning complet de l'école : stages, baptêmes de l'air, voyages et fermetures. Cliquez sur un événement pour en voir le détail. »
+                    </div>
+
+                    <!-- Légende + filtres -->
+                    <div class="cal-legend">
+                        <div class="cal-legend-item"><div class="cal-legend-dot stage"></div> Stage de formation</div>
+                        <div class="cal-legend-item"><div class="cal-legend-dot bapteme"></div> Baptêmes / Biplace</div>
+                        <div class="cal-legend-item"><div class="cal-legend-dot voyage"></div> Voyage / Déplacement</div>
+                        <div class="cal-legend-item"><div class="cal-legend-dot ferme"></div> École fermée</div>
+                    </div>
+
+                    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom: 20px;">
+                        <div class="cal-filters" style="margin:0; flex:1;">
+                            <button class="cal-filter-btn active" data-type="all">
+                                <span class="cal-filter-dot" style="background:#0f2949;"></span> Tout
+                            </button>
+                            <button class="cal-filter-btn" data-type="stage">
+                                <span class="cal-filter-dot" style="background:#7c3aed;"></span> Stages
+                            </button>
+                            <button class="cal-filter-btn" data-type="bapteme">
+                                <span class="cal-filter-dot" style="background:#3b82f6;"></span> Baptêmes
+                            </button>
+                            <button class="cal-filter-btn" data-type="voyage">
+                                <span class="cal-filter-dot" style="background:#f59e0b;"></span> Voyages
+                            </button>
+                            <button class="cal-filter-btn" data-type="ferme">
+                                <span class="cal-filter-dot" style="background:#ef4444;"></span> Fermetures
+                            </button>
+                        </div>
+                        <div class="cal-today-indicator">
+                            <div class="cal-today-dot"></div>
+                            Aujourd'hui
+                        </div>
+                    </div>
+
+                    <!-- LE CALENDRIER -->
+                    <div class="cal-wrapper">
+                        <!-- Navigation mois -->
+                        <div class="cal-nav">
+                            <button class="cal-nav-btn" id="btnPrev" aria-label="Mois précédent">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <div class="cal-nav-title">
+                                <h2 id="calMonthTitle"></h2>
+                                <div class="cal-nav-count" id="calEventCount"></div>
+                            </div>
+                            <button class="cal-nav-btn" id="btnNext" aria-label="Mois suivant">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- En-têtes des jours -->
+                        <div class="cal-grid-header">
+                            <span>Lun</span>
+                            <span>Mar</span>
+                            <span>Mer</span>
+                            <span>Jeu</span>
+                            <span>Ven</span>
+                            <span class="weekend">Sam</span>
+                            <span class="weekend">Dim</span>
+                        </div>
+
+                        <!-- Grille des jours (générée en JS) -->
+                        <div class="cal-grid-body" id="calGridBody"></div>
+
+                        <!-- Panneau de détail du jour cliqué -->
+                        <div class="cal-detail-panel" id="calDetailPanel">
+                            <span class="cal-detail-empty">Cliquez sur un jour ou un événement pour afficher les détails.</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Section news -->
+                    <section class="unified-news-section" style="margin-top: 32px;">
+                        <h2>Inscriptions &amp; Contact</h2>
+                        <div class="news-grid">
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag highlight">Réservation</span>
+                                    <h3>Réserver une date de stage</h3>
+                                    <p>Contactez Stéphane pour réserver votre place. Un acompte de 10 % valide l'inscription.</p>
+                                </div>
+                                <a href="stage-parapente-inscription.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Fiche d'inscription</a>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag">Bons Cadeaux</span>
+                                    <h3>Offrez un Bon Cadeau</h3>
+                                    <p>Offrez l'expérience du vol libre à vos proches avec nos bons cadeaux valables 1 an.</p>
+                                </div>
+                                <a href="bons-cadeaux.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">Découvrir</a>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="internal-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Contact &amp; Réservation</h3>
+                        <div class="sidebar-contact-info">
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Téléphone / WhatsApp</h4>
+                                    <p><a href="tel:+33695288020">06 95 28 80 20</a></p>
+                                </div>
+                            </div>
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Adresse de l'école</h4>
+                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="coordonnees.html" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%;">S'inscrire en ligne</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Légende des couleurs</h3>
+                        <div style="display:flex; flex-direction:column; gap:12px; margin-top:4px;">
+                            <div style="display:flex; align-items:flex-start; gap:10px;">
+                                <div style="width:4px; border-radius:4px; background:#7c3aed; align-self:stretch; min-height:36px; flex-shrink:0;"></div>
+                                <div>
+                                    <div style="font-weight:700; font-size:0.85rem; color:#5b21b6;">Stage de formation</div>
+                                    <div style="font-size:0.78rem; color:var(--text-muted);">Initiation, perf, SIV, contrôle…</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:flex-start; gap:10px;">
+                                <div style="width:4px; border-radius:4px; background:#3b82f6; align-self:stretch; min-height:36px; flex-shrink:0;"></div>
+                                <div>
+                                    <div style="font-weight:700; font-size:0.85rem; color:#1e40af;">Baptêmes biplace</div>
+                                    <div style="font-size:0.78rem; color:var(--text-muted);">Journées ou demi-journées</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:flex-start; gap:10px;">
+                                <div style="width:4px; border-radius:4px; background:#f59e0b; align-self:stretch; min-height:36px; flex-shrink:0;"></div>
+                                <div>
+                                    <div style="font-weight:700; font-size:0.85rem; color:#92400e;">Voyage / Déplacement</div>
+                                    <div style="font-size:0.78rem; color:var(--text-muted);">Lac de Garde, Madagascar, SIV…</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:flex-start; gap:10px;">
+                                <div style="width:4px; border-radius:4px; background:#ef4444; align-self:stretch; min-height:36px; flex-shrink:0;"></div>
+                                <div>
+                                    <div style="font-weight:700; font-size:0.85rem; color:#991b1b;">École fermée</div>
+                                    <div style="font-size:0.78rem; color:var(--text-muted);">Vacances, jours fériés</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Badge source données (injecté par JS) -->
+    <div id="calSourceBadge" style="
+        display:none; position:fixed; bottom:20px; right:20px; z-index:9000;
+        align-items:center; gap:7px; padding:8px 14px; border-radius:999px;
+        font-size:0.76rem; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15);
+        cursor:default;
+    "></div>
+
+    <script src="header-footer.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+
+/* ══════════════════════════════════════════════════════════════
+ *
+ *   ╔═══════════════════════════════════════════════════════╗
+ *   ║         LISTE DES ÉVÉNEMENTS — Zone d'édition        ║
+ *   ║                                                       ║
+ *   ║  Pour ajouter un événement, copiez un bloc ci-dessous║
+ *   ║  et adaptez les valeurs entre guillemets.             ║
+ *   ╚═══════════════════════════════════════════════════════╝
+ *
+ *  TYPES :  "stage" | "bapteme" | "voyage" | "ferme"
+ *  DATES :  format AAAA-MM-JJ  (ex. "2026-07-14")
+ *  LIEN  :  fichier HTML du site (optionnel, laisser "" sinon)
+ *
+ * ════════════════════════════════════════════════════════════ */
+
+const EVENEMENTS = [
+
+    /* ─── JANVIER 2025 ─── */
+    { type:"ferme",   title:"Vacances hivernales",           start:"2025-01-01", end:"2025-01-15", desc:"L'école est fermée pendant les vacances d'hiver.",                                  link:"" },
+    { type:"stage",   title:"Stage Initiation",              start:"2025-01-20", end:"2025-01-24", desc:"Stage Initiation Parapente – 5 jours, pente école.",                                link:"stage-parapente-initiation.html" },
+
+    /* ─── MARS 2025 ─── */
+    { type:"stage",   title:"Stage Perf 1",                  start:"2025-03-03", end:"2025-03-07", desc:"Stage Perfectionnement 1 – premiers vols autonomes.",                               link:"stage-parapente-perfectionnement.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2025-03-15", end:"2025-03-16", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+
+    /* ─── AVRIL 2025 ─── */
+    { type:"ferme",   title:"Fermeture Pâques",              start:"2025-04-18", end:"2025-04-22", desc:"Fermeture pour les vacances de Pâques.",                                            link:"" },
+    { type:"stage",   title:"Stage Initiation ParaKite",     start:"2025-04-07", end:"2025-04-09", desc:"Initiation au ParaKite – 3 jours, pente école.",                                   link:"parakite-initiation.html" },
+
+    /* ─── MAI 2025 ─── */
+    { type:"voyage",  title:"Voyage Italie – Lac de Garde",  start:"2025-05-05", end:"2025-05-10", desc:"Stage SIV au Lac de Garde (Malcesine) – Monte Baldo 1760m.",                       link:"parapente-lac-de-garde.html" },
+    { type:"stage",   title:"Stage SIV Parapente",           start:"2025-05-19", end:"2025-05-21", desc:"Stage pilotage SIV – Roquebrune Cap Martin.",                                      link:"SIV-parapente.html" },
+    { type:"ferme",   title:"Ascension",                     start:"2025-05-29", end:"2025-05-29", desc:"Jour férié – école fermée.",                                                        link:"" },
+
+    /* ─── JUIN 2025 ─── */
+    { type:"stage",   title:"Stage Perf 2",                  start:"2025-06-02", end:"2025-06-06", desc:"Stage Perfectionnement 2 – vers l'autonomie.",                                     link:"stage-parapente-perfect.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2025-06-14", end:"2025-06-15", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"stage",   title:"Stage Mini-Voile Initiation",   start:"2025-06-23", end:"2025-06-26", desc:"Stage Initiation Mini-Voile & Speed – 4 jours.",                                   link:"mini-voile-initiation.html" },
+
+    /* ─── JUILLET 2025 ─── */
+    { type:"stage",   title:"Stage Initiation",              start:"2025-07-07", end:"2025-07-11", desc:"Stage Initiation Parapente – 5 jours.",                                            link:"stage-parapente-initiation.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2025-07-19", end:"2025-07-20", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"stage",   title:"Stage Perf 3",                  start:"2025-07-21", end:"2025-07-25", desc:"Stage Perfectionnement 3 – thermique & analyse.",                                  link:"stage-parapente-perf.html" },
+
+    /* ─── AOÛT 2025 ─── */
+    { type:"stage",   title:"Stage Initiation",              start:"2025-08-04", end:"2025-08-08", desc:"Stage Initiation Parapente – 5 jours.",                                            link:"stage-parapente-initiation.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2025-08-16", end:"2025-08-17", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"voyage",  title:"Voyage Madagascar",             start:"2025-08-20", end:"2025-09-02", desc:"Stage & Vol à Madagascar – Lac Ampefy, SIV au treuil.",                            link:"parapente-madagascar.html" },
+
+    /* ─── SEPTEMBRE 2025 ─── */
+    { type:"stage",   title:"Stage Perf 1",                  start:"2025-09-08", end:"2025-09-12", desc:"Stage Perfectionnement 1.",                                                         link:"stage-parapente-perfectionnement.html" },
+    { type:"stage",   title:"Stage Mini-Voile Perf",         start:"2025-09-22", end:"2025-09-25", desc:"Stage Perfectionnement Mini-Voile – virages dynamiques.",                          link:"mini-voile-perfectionnement.html" },
+
+    /* ─── OCTOBRE 2025 ─── */
+    { type:"stage",   title:"Stage Cross & Distance",        start:"2025-10-06", end:"2025-10-10", desc:"Stage spécialisé Cross & Vol de distance.",                                        link:"parapente-cross-distance.html" },
+    { type:"ferme",   title:"Vacances Toussaint",            start:"2025-10-18", end:"2025-11-02", desc:"Fermeture pour les vacances scolaires de la Toussaint.",                            link:"" },
+
+    /* ─── NOVEMBRE 2025 ─── */
+    { type:"stage",   title:"Stage Initiation ParaKite",     start:"2025-11-10", end:"2025-11-12", desc:"Initiation au ParaKite – 3 jours.",                                                link:"parakite-initiation.html" },
+
+    /* ─── DÉCEMBRE 2025 ─── */
+    { type:"ferme",   title:"Fermeture Noël",                start:"2025-12-20", end:"2025-12-31", desc:"Fermeture de l'école pour les fêtes de fin d'année.",                              link:"" },
+
+    /* ─── JANVIER 2026 ─── */
+    { type:"ferme",   title:"Fermeture hivernale",           start:"2026-01-01", end:"2026-01-12", desc:"L'école est fermée en début d'année.",                                              link:"" },
+    { type:"stage",   title:"Stage Initiation",              start:"2026-01-19", end:"2026-01-23", desc:"Stage Initiation Parapente – 5 jours.",                                            link:"stage-parapente-initiation.html" },
+
+    /* ─── FÉVRIER 2026 ─── */
+    { type:"stage",   title:"Stage SIV ParaKite",            start:"2026-02-02", end:"2026-02-04", desc:"Stage SIV spécifique ParaKite au Lac de Garde.",                                   link:"parakite-siv.html" },
+
+    /* ─── MARS 2026 ─── */
+    { type:"voyage",  title:"Voyage Lac de Garde",           start:"2026-03-09", end:"2026-03-14", desc:"Voyage SIV au Lac de Garde – Malcesine, Italie.",                                  link:"parapente-lac-de-garde.html" },
+    { type:"stage",   title:"Stage Perf 2",                  start:"2026-03-23", end:"2026-03-27", desc:"Stage Perfectionnement 2.",                                                         link:"stage-parapente-perfect.html" },
+
+    /* ─── AVRIL 2026 ─── */
+    { type:"ferme",   title:"Fermeture Pâques",              start:"2026-04-02", end:"2026-04-06", desc:"Fermeture pour les vacances de Pâques.",                                            link:"" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2026-04-18", end:"2026-04-19", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+
+    /* ─── MAI 2026 ─── */
+    { type:"stage",   title:"Stage Initiation Mini-Voile",   start:"2026-05-04", end:"2026-05-07", desc:"Stage Initiation Mini-Voile & Speed – 4 jours.",                                   link:"mini-voile-initiation.html" },
+    { type:"voyage",  title:"Voyage Lac de Garde – SIV",     start:"2026-05-18", end:"2026-05-23", desc:"Voyage stage SIV & pilotage au Lac de Garde.",                                     link:"parapente-lac-de-garde.html" },
+
+    /* ─── JUIN 2026 ─── */
+    { type:"stage",   title:"Stage Perf 3",                  start:"2026-06-01", end:"2026-06-05", desc:"Stage Perfectionnement 3 – Thermique & analyse.",                                  link:"stage-parapente-perf.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2026-06-13", end:"2026-06-14", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"stage",   title:"Stage SIV Parapente",           start:"2026-06-22", end:"2026-06-24", desc:"Stage SIV – Roquebrune Cap Martin.",                                               link:"SIV-parapente.html" },
+
+    /* ─── JUILLET 2026 ─── */
+    { type:"stage",   title:"Stage Initiation",              start:"2026-07-06", end:"2026-07-10", desc:"Stage Initiation Parapente – 5 jours.",                                            link:"stage-parapente-initiation.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2026-07-18", end:"2026-07-19", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"stage",   title:"Stage Cross & Distance",        start:"2026-07-27", end:"2026-07-31", desc:"Stage spécialisé Cross & Vol de distance.",                                        link:"parapente-cross-distance.html" },
+
+    /* ─── AOÛT 2026 ─── */
+    { type:"stage",   title:"Stage Perf 1",                  start:"2026-08-03", end:"2026-08-07", desc:"Stage Perfectionnement 1 – premiers vols autonomes.",                               link:"stage-parapente-perfectionnement.html" },
+    { type:"bapteme", title:"Baptêmes de l'air",             start:"2026-08-15", end:"2026-08-16", desc:"Week-end baptêmes biplace.",                                                        link:"bapteme-parapente.html" },
+    { type:"voyage",  title:"Voyage Madagascar",             start:"2026-08-22", end:"2026-09-04", desc:"Stage & Vol à Madagascar – Lac Ampefy.",                                           link:"parapente-madagascar.html" },
+
+]; /* ← FIN DE LA LISTE — Ne pas effacer cette ligne */
+
+
+/* ████████████████████████████████████████████████████████████
+ * ██                                                        ██
+ * ██   CONFIGURATION GOOGLE CALENDAR                        ██
+ * ██   ─────────────────────────────────────────────────    ██
+ * ██   Actuellement en mode LOCAL (Google non activé).      ██
+ * ██                                                        ██
+ * ██   Quand le client fournit ses accès Google, il suffit  ██
+ * ██   de :                                                  ██
+ * ██     1. Mettre  enabled: true                           ██
+ * ██     2. Coller la clé API dans  apiKey                  ██
+ * ██     3. Coller les IDs d'agendas dans  calendarIds      ██
+ * ██                                                        ██
+ * ██   Le reste du code s'adapte automatiquement.           ██
+ * ██                                                        ██
+ * ████████████████████████████████████████████████████████████
+ */
+
+const GOOGLE_CALENDAR_CONFIG = {
+    enabled: false,
+    apiKey: "",
+    calendarIds: {
+        stage   : "",
+        bapteme : "",
+        voyage  : "",
+        ferme   : "",
+    },
+    linkMap: {},
+};
+
+/* ══════════════════════════════════════════════════════════════════
+ *  MOTEUR DU CALENDRIER — Ne pas modifier à partir d'ici
+ * ══════════════════════════════════════════════════════════════════ */
+
+const MONTHS = ['Janvier','Février','Mars','Avril','Mai','Juin',
+                'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const TYPE_LABELS = {
+    stage  : 'Stage de formation',
+    bapteme: 'Baptême biplace',
+    voyage : 'Voyage / Déplacement',
+    ferme  : 'École fermée',
+};
+
+let ACTIVE_EVENTS = [...EVENEMENTS];
+
+function parseDate(s)   { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); }
+function sameDay(a, b)  { return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
+function formatDate(d)  { return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`; }
+function toISO(d)       { return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+
+let curYear, curMonth, activeFilter = 'all', selectedDay = null;
+const today = new Date();
+curYear  = today.getFullYear();
+curMonth = today.getMonth();
+
+function setSourceBadge(source) {
+    const badge = document.getElementById('calSourceBadge');
+    if (!badge) return;
+    badge.style.display = 'inline-flex';
+    if (source === 'google') {
+        badge.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Synchronisé avec Google Agenda`;
+        badge.style.background = '#f0f9ff';
+        badge.style.color = '#0369a1';
+        badge.style.border = '1px solid #bae6fd';
+    } else {
+        badge.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Planning local — Google Agenda non connecté`;
+        badge.style.background = '#fffbeb';
+        badge.style.color = '#92400e';
+        badge.style.border = '1px solid #fde68a';
+    }
+}
+
+async function fetchGoogleEvents() {
+    if (!GOOGLE_CALENDAR_CONFIG.enabled) return false;
+    const cfg = GOOGLE_CALENDAR_CONFIG;
+    if (!cfg.apiKey || !cfg.apiKey.startsWith('AIza')) return false;
+    const tMin = new Date(today.getFullYear() - 1, 0, 1).toISOString();
+    const tMax = new Date(today.getFullYear() + 2, 11, 31).toISOString();
+    const fetched = [];
+    for (const [type, calId] of Object.entries(cfg.calendarIds)) {
+        if (!calId) continue;
+        const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calId)}/events?key=${cfg.apiKey}&timeMin=${tMin}&timeMax=${tMax}&singleEvents=true&orderBy=startTime&maxResults=500`;
+        try {
+            const resp = await fetch(url);
+            if (!resp.ok) continue;
+            const data = await resp.json();
+            (data.items || []).forEach(item => {
+                const startStr = item.start.date || item.start.dateTime.substring(0, 10);
+                let endDate = item.end.date ? (() => { const d = new Date(item.end.date); d.setDate(d.getDate()-1); return d; })() : new Date(item.end.dateTime);
+                fetched.push({ type, title: item.summary || '(sans titre)', start: startStr, end: toISO(endDate), desc: item.description || '', link: cfg.linkMap[item.summary] || '' });
+            });
+        } catch(err) { console.error(err); }
+    }
+    if (!fetched.length) return false;
+    ACTIVE_EVENTS = fetched;
+    return true;
+}
+
+function eventsForMonth(y, m, f) {
+    return ACTIVE_EVENTS.filter(ev => {
+        if (f !== 'all' && ev.type !== f) return false;
+        const s = parseDate(ev.start), e = parseDate(ev.end);
+        return s <= new Date(y, m+1, 0) && e >= new Date(y, m, 1);
+    });
+}
+function eventsOnDay(date, f) {
+    return ACTIVE_EVENTS.filter(ev => {
+        if (f !== 'all' && ev.type !== f) return false;
+        const s = parseDate(ev.start), e = parseDate(ev.end);
+        return date >= s && date <= e;
+    });
+}
+function isStart(ev, date) { return sameDay(parseDate(ev.start), date); }
+
+function renderCalendar() {
+    const grid = document.getElementById('calGridBody');
+    grid.innerHTML = '';
+    const firstDay = new Date(curYear, curMonth, 1);
+    const lastDay  = new Date(curYear, curMonth+1, 0);
+    const startDow = (firstDay.getDay() + 6) % 7;
+    const n = eventsForMonth(curYear, curMonth, activeFilter).length;
+    document.getElementById('calMonthTitle').textContent = `${MONTHS[curMonth]} ${curYear}`;
+    document.getElementById('calEventCount').textContent = n === 0 ? 'Aucune activité ce mois-ci' : `${n} activité${n > 1 ? 's' : ''} ce mois`;
+    const prevLast = new Date(curYear, curMonth, 0);
+    for (let i = 0; i < startDow; i++) grid.appendChild(makeCell(new Date(prevLast.getFullYear(), prevLast.getMonth(), prevLast.getDate()-(startDow-1-i)), true));
+    for (let d = 1; d <= lastDay.getDate(); d++) grid.appendChild(makeCell(new Date(curYear, curMonth, d), false));
+    const rem = (startDow + lastDay.getDate()) % 7 === 0 ? 0 : 7 - ((startDow + lastDay.getDate()) % 7);
+    for (let i = 1; i <= rem; i++) grid.appendChild(makeCell(new Date(curYear, curMonth+1, i), true));
+    if (selectedDay) showDetail(selectedDay); else showDetailEmpty();
+}
+
+function makeCell(date, otherMonth) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell' + (otherMonth ? ' other-month' : '') + (sameDay(date, today) ? ' today' : '') + ([0,6].includes(date.getDay()) ? ' weekend-day' : '');
+    cell.innerHTML = `<div><span class="cal-day-num">${date.getDate()}</span></div>`;
+    eventsOnDay(date, activeFilter).forEach(ev => {
+        const pill = document.createElement('span'), started = isStart(ev, date);
+        pill.className = `cal-pill ${ev.type}${!started ? ' continuation' : ''}`;
+        pill.textContent = started ? ev.title : '↳ ' + ev.title;
+        pill.addEventListener('click', e => { e.stopPropagation(); selectedDay = date; showDetail(date); });
+        cell.appendChild(pill);
+    });
+    cell.addEventListener('click', () => { selectedDay = date; showDetail(date); });
+    return cell;
+}
+
+function showDetail(date) {
+    const panel = document.getElementById('calDetailPanel'), evs = eventsOnDay(date, activeFilter);
+    if (!evs.length) { panel.innerHTML = `<span class="cal-detail-empty">Aucune activité le <strong>${formatDate(date)}</strong>.</span>`; return; }
+    panel.innerHTML = '';
+    evs.forEach(ev => {
+        const s = parseDate(ev.start), e = parseDate(ev.end), card = document.createElement('div');
+        card.className = 'cal-detail-card';
+        if (ev.link) card.addEventListener('click', () => window.location.href = ev.link);
+        card.innerHTML = `<div class="cal-detail-bar ${ev.type}"></div><div class="cal-detail-body"><div class="cal-detail-type ${ev.type}">${TYPE_LABELS[ev.type] || ev.type}</div><div class="cal-detail-title">${ev.title}</div><div class="cal-detail-dates">${ev.start === ev.end ? formatDate(s) : formatDate(s) + ' → ' + formatDate(e)}</div>${ev.desc ? `<div class="cal-detail-desc">${ev.desc}</div>` : ''}${ev.link ? `<a class="cal-detail-link" href="${ev.link}">En savoir plus <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>` : ''}</div>`;
+        panel.appendChild(card);
+    });
+}
+function showDetailEmpty() {
+    document.getElementById('calDetailPanel').innerHTML =
+        '<span class="cal-detail-empty">Cliquez sur un jour ou un événement pour afficher les détails.</span>';
+}
+
+/* ── Navigation ── */
+document.getElementById('btnPrev').addEventListener('click', () => {
+    curMonth--; if (curMonth < 0) { curMonth = 11; curYear--; }
+    selectedDay = null; renderCalendar();
+});
+document.getElementById('btnNext').addEventListener('click', () => {
+    curMonth++; if (curMonth > 11) { curMonth = 0; curYear++; }
+    selectedDay = null; renderCalendar();
+});
+
+/* ── Filtres ── */
+document.querySelectorAll('.cal-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.cal-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.type;
+        selectedDay  = null;
+        renderCalendar();
+    });
+});
+
+/* ── Raccourcis clavier ← → ── */
+document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  document.getElementById('btnPrev').click();
+    if (e.key === 'ArrowRight') document.getElementById('btnNext').click();
+});
+
+/* ── Démarrage ── */
+(async () => {
+    const usedGoogle = await fetchGoogleEvents();
+    setSourceBadge(usedGoogle ? 'google' : 'local');
+    renderCalendar();
+})();
+
+    </script>
+</body>
+</html>

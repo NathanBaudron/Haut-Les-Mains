@@ -1,0 +1,455 @@
+[
+    {
+        "text": "Parapente",
+        "href": "parapente.html",
+        "children": [
+            {
+                "text": "ParaKite",
+                "href": "parakite.html",
+                "children": []
+            },
+            {
+                "text": "Généralité Formation",
+                "href": "stage-parapente-general.html",
+                "children": []
+            },
+            {
+                "text": "Cycle 1",
+                "href": "parapente-cycle-1.html",
+                "children": [
+                    {
+                        "text": "Stage Initiation Parapente",
+                        "href": "stage-parapente-initiation.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Stage Perf 1",
+                        "href": "stage-parapente-perfectionnement.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Cycle 2",
+                "href": "parapente-cycle-2.html",
+                "children": [
+                    {
+                        "text": "Stage Perf 2",
+                        "href": "stage-parapente-perfect.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Stage Perf 3",
+                        "href": "stage-parapente-perf.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Cycle 3",
+                "href": "parapente-cycle-3.html",
+                "children": [
+                    {
+                        "text": "Autonomie Déco Atéro",
+                        "href": "autonomie-parapente.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Montée en Thermique",
+                        "href": "parapente-thermique.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Pilotage Actif",
+                        "href": "parapente-pilotage-actif.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Cross / Distance",
+                        "href": "parapente-cross-distance.html",
+                        "children": []
+                    },
+                    {
+                        "text": "SIV (Incidents de Vol)",
+                        "href": "SIV-parapente.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "PAP",
+                "href": "progression-rapide-parapente.html",
+                "children": []
+            },
+            {
+                "text": "PIB",
+                "href": "progression-parapente-pib.html",
+                "children": []
+            },
+            {
+                "text": "Voyages Parapente",
+                "href": "voyage.html",
+                "children": [
+                    {
+                        "text": "Italie",
+                        "href": "parapente-italie.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Madagascar",
+                        "href": "parapente-madagascar.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Espagne",
+                        "href": "espagne-organya.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Le Maroc",
+                        "href": "parapente-maroc.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Contrôle Aile",
+                "href": "controle-parapente-speed.html",
+                "children": []
+            },
+            {
+                "text": "Fiche d'Inscription",
+                "href": "stage-parapente-inscription.html",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "Mini-Voile & Speed",
+        "href": "mini-voile.html",
+        "children": [
+            {
+                "text": "Généralité Mini-Voile",
+                "href": "mini-voile-general.html",
+                "children": []
+            },
+            {
+                "text": "Initiation Mini-Voile",
+                "href": "initiation.html",
+                "children": []
+            },
+            {
+                "text": "Perfectionnement",
+                "href": "perfectionnement.html",
+                "children": []
+            },
+            {
+                "text": "Contrôle Mini-Voile",
+                "href": "controle-minivoile-speedflying.html",
+                "children": []
+            },
+            {
+                "text": "SIV Mini-Voile",
+                "href": "six-minivoile-speedflying.html",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "Baptêmes de l'air",
+        "href": "bapteme-de-l-air.html",
+        "children": [
+            {
+                "text": "Parapente Biplace",
+                "href": "bapteme-parapente.html",
+                "children": [
+                    {
+                        "text": "Généralité",
+                        "href": "bapteme-parapente-generalite.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Couleur Lavande",
+                        "href": "bapteme-parapente-lavande.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Vision Verdon",
+                        "href": "bapteme-parapente-verdon.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol sensation ascendance",
+                        "href": "bapteme-parapente-sensation.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Groupe et CE",
+                        "href": "bapteme-parapente-ce.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Option voltige",
+                        "href": "bapteme-parapente-acro.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Autogire",
+                "href": "autogire.html",
+                "children": [
+                    {
+                        "text": "Généralité Giro",
+                        "href": "ulm-autogire.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Découverte",
+                        "href": "autogire-ulm-provence.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Provençal",
+                        "href": "ulm-autogire-provence.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Senteur Lavande",
+                        "href": "ulm-autogire-lavande.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Castellane / Roc",
+                        "href": "ulm-autogire-castellane.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Gorges du Verdon",
+                        "href": "ulm-autogire-verdon.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Lac de Castillon",
+                        "href": "ulm-autogire-standrelesalpes.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Le Cousson (Digne)",
+                        "href": "ulm-autogire-dignelesbains.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Lac d'Allos",
+                        "href": "ulm-autogire-allos.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Vol Fort d'Entrevaux",
+                        "href": "Ulm-autogire-histoire.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Prestation VIP",
+                        "href": "luxe-vip.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Formule La Totale",
+                        "href": "Autogire-ulm-verdon.html",
+                        "children": []
+                    },
+                    {
+                        "text": "À la Carte",
+                        "href": "a-la-carte.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Hélicoptère",
+                "href": "helicoptere.html",
+                "children": [
+                    {
+                        "text": "Généralité Hélico",
+                        "href": "generalite-helicoptere-classe6.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Le Montagnard",
+                        "href": "helicoptere-montagnard-provence.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Le Lac de Castillon",
+                        "href": "helicoptere-lac-castillon-verdon.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Les Gorges du Verdon",
+                        "href": "helicoptere-verdon.html",
+                        "children": []
+                    },
+                    {
+                        "text": "Prestation VIP",
+                        "href": "helicoptere-vip.html",
+                        "children": []
+                    },
+                    {
+                        "text": "À la Carte",
+                        "href": "helicoptere-a-la-carte.html",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Vol Hiver Mercantour",
+                "href": "Autogire-mercantour-hiver.html",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "Hébergement",
+        "href": "hebergement.html",
+        "children": [
+            {
+                "text": "Descriptif Hébergements",
+                "href": "dormir.html",
+                "children": []
+            },
+            {
+                "text": "Gîte \"Chez Angélique\"",
+                "href": "maison.html",
+                "children": []
+            },
+            {
+                "text": "Gîte Appartement",
+                "href": "gite.html",
+                "children": []
+            },
+            {
+                "text": "Chambres d'Hôtes \"Chez Coco\"",
+                "href": "chambredhote.html",
+                "children": []
+            },
+            {
+                "text": "Le Dortoir",
+                "href": "chambre.html",
+                "children": []
+            },
+            {
+                "text": "Table d'Hôte & Snack",
+                "href": "Snack-Parapente.html",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "Sites de Vol",
+        "href": "sites-parapente.html",
+        "children": [
+            {
+                "text": "généralité",
+                "href": "site-parapente-general.html",
+                "children": []
+            },
+            {
+                "text": "Site de Barrême",
+                "href": "parapente-barreme.html",
+                "children": []
+            },
+            {
+                "text": "Site de Castellane",
+                "href": "parapente-castellane.html",
+                "children": []
+            },
+            {
+                "text": "Site de Digne-les-Bains",
+                "href": "parapente-digne.html",
+                "children": []
+            },
+            {
+                "text": "Site d'Oraison",
+                "href": "parapente-oraison.html",
+                "children": []
+            },
+            {
+                "text": "Site de Sisteron",
+                "href": "parapente-sisteron-saint-geniez.html",
+                "children": []
+            },
+            {
+                "text": "Site Val d'Allos",
+                "href": "parapente-le-cordeuil.html",
+                "children": []
+            },
+            {
+                "text": "Site du Lachens",
+                "href": "parapente-lachens.html",
+                "children": []
+            },
+            {
+                "text": "Site SIV Roquebrune",
+                "href": "parapente-roquebrune.html",
+                "children": []
+            }
+        ]
+    },
+    {
+        "text": "Infos Pratiques",
+        "href": "parapente-divers.html",
+        "children": [
+            {
+                "text": "L'Équipe de l'École",
+                "href": "dirtech.html",
+                "children": []
+            },
+            {
+                "text": "Météo & Balises",
+                "href": "meteo.html",
+                "children": []
+            },
+            {
+                "text": "Matériel d'Occasion",
+                "href": "parapente-occasion.html",
+                "children": []
+            },
+            {
+                "text": "Nous Rejoindre",
+                "href": "parapente-provence.html",
+                "children": []
+            },
+            {
+                "text": "Site de St-André-les-Alpes",
+                "href": "parapente-verdon.html",
+                "children": []
+            },
+            {
+                "text": "Vol en Haute-Provence",
+                "href": "parapente-provence-04.html",
+                "children": []
+            },
+            {
+                "text": "Le Village de Barrême",
+                "href": "village-barreme.html",
+                "children": []
+            },
+            {
+                "text": "Bonnes Adresses",
+                "href": "verdon-campings-restaurants.html",
+                "children": []
+            },
+            {
+                "text": "Utilitaires & Documents",
+                "href": "parapente-utilitaires.html",
+                "children": []
+            },
+            {
+                "text": "Pourquoi Nous Choisir",
+                "href": "structure.html",
+                "children": []
+            }
+        ]
+    }
+]
