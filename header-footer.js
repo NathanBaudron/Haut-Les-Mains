@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Configuration des écouteurs de clics sur les boutons avec rafraîchissement
+    // Configuration des écouteurs de clics sur les boutons avec rafraîchissement différé (évite les conflits d'écriture de cookie)
     const btnFr = document.getElementById("btn-lang-fr");
     const btnEn = document.getElementById("btn-lang-en");
     if (btnFr && btnEn) {
@@ -566,13 +566,17 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             clearTranslateCookie();
             localStorage.setItem('hlm_lang', 'fr');
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 150);
         });
         btnEn.addEventListener("click", (e) => {
             e.preventDefault();
             setTranslateCookie('/fr/en');
             localStorage.setItem('hlm_lang', 'en');
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 150);
         });
     }
 

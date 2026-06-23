@@ -4,8 +4,14 @@
     <script>
         if (localStorage.getItem('hlm_lang') === 'en') {
             document.documentElement.classList.add('translating-en');
+            var style = document.createElement('style');
+            style.id = 'early-translate-style';
+            style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
+            document.head.appendChild(style);
             setTimeout(function() {
                 document.documentElement.classList.remove('translating-en');
+                var el = document.getElementById('early-translate-style');
+                if (el) el.remove();
             }, 1500);
         }
     </script>
