@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan du site global - Haut les Mains Barrême</title>
+    <meta name="description" content="Plan du site global de l'école de parapente Haut les Mains à Barrême. Accédez facilement à toutes nos pages de baptêmes, stages, voyages, sites de vol et hébergements.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sitemap-section {
+            margin-bottom: 32px;
+        }
+        .sitemap-section h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            color: var(--sky-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+        }
+        .sitemap-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .sitemap-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+        }
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .sitemap-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sitemap-list li ::before {
+            content: "•";
+            color: var(--sky-primary);
+            font-weight: bold;
+        }
+        .sitemap-list a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+        .sitemap-list a:hover {
+            color: var(--sky-primary);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder (Injected dynamically by header-footer.js) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Area -->
+    <main class="internal-page">
+        <div class="container">
+            <div class="internal-grid">
+                
+                <!-- Content Column -->
+                <article class="internal-content">
+                    
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a> 
+                        <span>&gt;</span>
+                        <span>Plan du site</span>
+                    </nav>
+
+                    <h1>Plan du site global</h1>
+                    
+                    <p class="intro-text">Parcourez l'arborescence complète de notre site internet pour trouver facilement l'information recherchée. Que vous souhaitiez réserver un baptême en biplace, vous inscrire à un stage de pilotage, planifier un voyage ou réserver un hébergement chez Haut les Mains, toutes nos pages sont accessibles ci-dessous.</p>
+
+                    <!-- Section 1: Informations Générales & Activités Principal -->
+                    <div class="sitemap-section">
+                        <h2>Accueil &amp; Informations Générales</h2>
+                        <div class="sitemap-links-grid">
+                            <div class="sitemap-col">
+                                <h3>Navigation Principale</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="index.html">Page d'accueil de l'école</a></li>
+                                    <li><a href="coordonnees.html">Nous contacter &amp; Coordonnées</a></li>
+                                    <li><a href="calendrier.html">Calendrier des formations &amp; stages</a></li>
+                                    <li><a href="bons-cadeaux.html">Achat de Bons Cadeaux en ligne</a></li>
+                                    <li><a href="mentions_legales.html">Mentions Légales du site</a></li>
+                                </ul>
+                            </div>
+                            <div class="sitemap-col">
+                                <h3>Prestations &amp; Utilitaires</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="controle-parapente-speed.html">Contrôle technique &amp; Réglage de voiles</a></li>
+                                    <li><a href="meteo.html">Météo, Balises &amp; Webcams de vol libre</a></li>
+                                    <li><a href="parapente-utilitaires.html">Outils pédagogiques &amp; Utilitaires</a></li>
+                                    <li><a href="dirtech.html">Directeurs techniques &amp; Équipe pédagogique</a></li>
+                                    <li><a href="appi-fela-parapente.html">Licence internationale APPI / FELA</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Baptêmes Biplace (Tandem) -->
+                    <div class="sitemap-section">
+                        <h2>Baptêmes de l'Air en Biplace (Tandem)</h2>
+                        <div class="sitemap-links-grid">
+                            <div class="sitemap-col">
+                                <h3>Présentation &amp; Formules</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="bapteme-parapente.html">Portail des Baptêmes &amp; Tarifs</a></li>
+                                    <li><a href="bapteme-parapente-generalite.html">Déroulement du vol &amp; Infos pratiques</a></li>
+                                    <li><a href="bapteme-parapente-lavande.html">Vol Couleur Lavande (80 €)</a></li>
+                                    <li><a href="bapteme-parapente-sensation.html">Vol Sensation Ascendance (100 €)</a></li>
+                                    <li><a href="bapteme-parapente-verdon.html">Vol Vision Verdon (150 €)</a></li>
+                                </ul>
+                            </div>
+                            <div class="sitemap-col">
+                                <h3>Offres Spéciales</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="bapteme-parapente-ce.html">Offres Groupes &amp; Comités d'Entreprise</a></li>
+                                    <li><a href="bapteme-parapente-acro.html">Option Voltige Acrobatique (Gratuite)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Stages & Progression -->
+                    <div class="sitemap-section">
+                        <h2>Stages &amp; Progression Parapente</h2>
+                        <div class="sitemap-links-grid">
+                            <div class="sitemap-col">
+                                <h3>Les Stages de Formation</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="stage-parapente-general.html">Présentation générale des stages</a></li>
+                                    <li><a href="stage-parapente-initiation.html">Stage Initiation - Apprendre à voler</a></li>
+                                    <li><a href="stage-parapente-perfectionnement.html">Stage Perf 1 - Premiers vols autonomes</a></li>
+                                    <li><a href="stage-parapente-perfect.html">Stage Perf 2 - Vers l'autonomie</a></li>
+                                    <li><a href="stage-parapente-perf.html">Stage Perf 3 - Thermique &amp; Analyse</a></li>
+                                    <li><a href="stage-parapente-inscription.html">Formulaire d'inscription aux stages</a></li>
+                                </ul>
+                            </div>
+                            <div class="sitemap-col">
+                                <h3>Progression Thématique &amp; Pilotage</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="autonomie-parapente.html">Validation autonomie décollage &amp; atterrissage</a></li>
+                                    <li><a href="parapente-thermique.html">Montée en thermique &amp; Vol de durée</a></li>
+                                    <li><a href="parapente-pilotage-actif.html">Le pilotage actif en parapente</a></li>
+                                    <li><a href="parapente-cross-distance.html">Vol de distance &amp; Cross</a></li>
+                                    <li><a href="SIV-parapente.html">Stage de Pilotage SIV &amp; Sécurité</a></li>
+                                    <li><a href="progression-rapide-parapente.html">Progression Accélérée Parapente (PAP)</a></li>
+                                    <li><a href="progression-parapente-pib.html">Progression Individualisée Biplace (PIB)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Sites de Vol & Voyages -->
+                    <div class="sitemap-section">
+                        <h2>Sites de Vol Libre &amp; Voyages</h2>
+                        <div class="sitemap-links-grid">
+                            <div class="sitemap-col">
+                                <h3>Sites de Vol en Provence</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="sites-parapente.html">Présentation des sites de vol libre</a></li>
+                                    <li><a href="site-parapente-general.html">Consignes générales de sécurité sur site</a></li>
+                                    <li><a href="parapente-barreme.html">Site de vol de Barrême</a></li>
+                                    <li><a href="parapente-digne.html">Site de vol de Digne-les-Bains</a></li>
+                                    <li><a href="parapente-castellane.html">Site de vol de Castellane</a></li>
+                                    <li><a href="parapente-oraison.html">Site de vol d'Oraison</a></li>
+                                    <li><a href="parapente-lachens.html">Site de vol du Mont Lachens</a></li>
+                                    <li><a href="parapente-roquebrune.html">Site de vol de Roquebrune-Cap-Martin</a></li>
+                                    <li><a href="parapente-le-cordeuil.html">Site de vol du Cordeuil</a></li>
+                                    <li><a href="parapente-sisteron-saint-geniez.html">Site de vol de Sisteron / Saint-Geniez</a></li>
+                                    <li><a href="parapente-provence.html">Synthèse des sites de vol en Provence</a></li>
+                                </ul>
+                            </div>
+                            <div class="sitemap-col">
+                                <h3>Voyages Parapente</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="voyage.html">Présentation des voyages &amp; circuits</a></li>
+                                    <li><a href="parapente-italie.html">Voyage en Italie - Lac de Garde</a></li>
+                                    <li><a href="parapente-lac-de-garde.html">Site de vol du Lac de Garde</a></li>
+                                    <li><a href="espagne-organya.html">Voyage en Espagne - Organyà</a></li>
+                                    <li><a href="parapente-maroc.html">Voyage au Maroc</a></li>
+                                    <li><a href="parapente-colombie.html">Voyage en Colombie</a></li>
+                                    <li><a href="parapente-chili.html">Voyage au Chili</a></li>
+                                    <li><a href="parapente-madagascar.html">Voyage à Madagascar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Autres Disciplines & Hébergement -->
+                    <div class="sitemap-section">
+                        <h2>Hébergement &amp; Disciplines Associées</h2>
+                        <div class="sitemap-links-grid">
+                            <div class="sitemap-col">
+                                <h3>Mini-Voile &amp; Parakite</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="mini-voile.html">Portail Speed Riding &amp; Mini-Voile</a></li>
+                                    <li><a href="mini-voile-general.html">Mini-Voile : Généralités</a></li>
+                                    <li><a href="mini-voile-initiation.html">Mini-Voile : Initiation</a></li>
+                                    <li><a href="mini-voile-perfectionnement.html">Mini-Voile : Perfectionnement</a></li>
+                                    <li><a href="mini-voile-controle.html">Mini-Voile : Contrôle technique</a></li>
+                                    <li><a href="mini-voile-siv.html">Mini-Voile : Stage SIV</a></li>
+                                    <li><a href="parakite.html">Portail Parakite / Vol de pente fort</a></li>
+                                    <li><a href="parakite-general.html">Parakite : Généralités</a></li>
+                                    <li><a href="parakite-initiation.html">Parakite : Initiation</a></li>
+                                    <li><a href="parakite-perfectionnement.html">Parakite : Perfectionnement</a></li>
+                                    <li><a href="parakite-controle.html">Parakite : Contrôle technique</a></li>
+                                    <li><a href="parakite-siv.html">Parakite : Stage SIV</a></li>
+                                </ul>
+                            </div>
+                            <div class="sitemap-col">
+                                <h3>Dormir &amp; Manger à Barrême</h3>
+                                <ul class="sitemap-list">
+                                    <li><a href="dormir.html">Les solutions d'hébergement</a></li>
+                                    <li><a href="hebergement.html">Hébergements de l'école Haut les Mains</a></li>
+                                    <li><a href="gite.html">Le Gîte de l'école</a></li>
+                                    <li><a href="chambre.html">Chambre d'hôte Coco</a></li>
+                                    <li><a href="chambredhote.html">Chambres d'hôtes de l'école</a></li>
+                                    <li><a href="maison.html">La Maison d'hôte</a></li>
+                                    <li><a href="village-barreme.html">Découvrir le village de Barrême</a></li>
+                                    <li><a href="verdon-campings-restaurants.html">Restaurants &amp; Campings du Verdon</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unified Actualités & Bons Cadeaux Section -->
+                    <section class="unified-news-section" style="margin-top: 48px;">
+                        <h2>Actualités &amp; Bons Cadeaux</h2>
+                        <div class="news-grid">
+                            <!-- Gift Voucher Card -->
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag highlight">Idée Cadeau</span>
+                                    <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
+                                    <p>Faites plaisir à vos proches en offrant un bon cadeau pour un baptême de l'air en Parapente. Valable 1 an.</p>
+                                </div>
+                                <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
+                            </div>
+                            
+                            <!-- Last News Card -->
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag">Nouveauté</span>
+                                    <h3>Formations et Stages Saison 2026</h3>
+                                    <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre à voler en Provence.</p>
+                                </div>
+                                <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
+                            </div>
+                        </div>
+                    </section>
+        
+                </article>
+                
+                <!-- Sidebar Column -->
+                <aside class="internal-sidebar">
+                    
+                    <!-- Contact Card -->
+                    <div class="sidebar-card">
+                        <h3>Contact &amp; Réservation</h3>
+                        <div class="sidebar-contact-info">
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Téléphone / WhatsApp</h4>
+                                    <p><a href="tel:+33695288020">06 95 28 80 20</a></p>
+                                </div>
+                            </div>
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Adresse de l'école</h4>
+                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="coordonnees.html" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%;">S'inscrire en ligne</a>
+                    </div>
+
+                    <!-- Newsletter Card -->
+                    <div class="sidebar-card">
+                        <h3>Newsletter</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Recevez nos actualités et offres de vol libre.</p>
+                        <form name="newsletterform" class="newsletter-form" action="index.html" method="POST" onsubmit="alert('Merci pour votre inscription ! (Démonstration)'); return false;">
+                            <input type="email" name="email" placeholder="Votre email..." required class="newsletter-input" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 12px; box-sizing: border-box;">
+                            <div style="display: flex; gap: 8px;">
+                                <button type="submit" class="btn btn-secondary btn-sm" style="flex: 1; justify-content: center; text-align: center;">Inscription</button>
+                                <button type="button" onclick="alert('Désinscription prise en compte (Démonstration)')" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted); background: none; font-size: 0.8rem; padding: 4px 6px;">Désinscrire</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </aside>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder (Injected dynamically by header-footer.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="header-footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
