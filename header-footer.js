@@ -544,61 +544,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Déclenchement de la traduction via l'élément caché Google Translate
-    function triggerGoogleTranslate(langCode) {
-        const select = document.querySelector('select.goog-te-combo');
-        if (select) {
-            if (langCode === 'fr') {
-                let hasFr = false;
-                for (let i = 0; i < select.options.length; i++) {
-                    if (select.options[i].value === 'fr') {
-                        hasFr = true;
-                        break;
-                    }
-                }
-                select.value = hasFr ? 'fr' : '';
-            } else {
-                select.value = langCode;
-            }
-            select.dispatchEvent(new Event('change'));
-            return true;
-        }
-        return false;
-    }
-
-    // Application de la langue sélectionnée
-    function applyTranslation(langCode) {
-        if (langCode === 'en') {
-            setTranslateCookie('/fr/en');
-            localStorage.setItem('hlm_lang', 'en');
-        } else {
-            clearTranslateCookie();
-            localStorage.setItem('hlm_lang', 'fr');
-        }
-
-        // Mettre à jour l'affichage des boutons immédiatement
-        updateSwitcherButtons(langCode);
-
-        // Tenter d'appliquer la traduction
-        if (triggerGoogleTranslate(langCode)) {
-            // Le widget est déjà chargé, action immédiate
-        } else {
-            // Si pas encore chargé, vérifier régulièrement (polling)
-            let attempts = 0;
-            const interval = setInterval(() => {
-                attempts++;
-                if (triggerGoogleTranslate(langCode) || attempts > 30) {
-                    clearInterval(interval);
-                    updateSwitcherButtons(langCode);
-                    // Si échec du retour au français (rare), on recharge pour garantir le propre
-                    if (attempts > 30 && langCode === 'fr') {
-                        window.location.reload();
-                    }
-                }
-            }, 100);
-        }
-    }
-
     function updateSwitcherButtons(langCode) {
         const btnFr = document.getElementById("btn-lang-fr");
         const btnEn = document.getElementById("btn-lang-en");
@@ -613,17 +558,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Configuration des écouteurs de clics sur les boutons
+    // Configuration des écouteurs de clics sur les boutons avec rafraîchissement
     const btnFr = document.getElementById("btn-lang-fr");
     const btnEn = document.getElementById("btn-lang-en");
     if (btnFr && btnEn) {
         btnFr.addEventListener("click", (e) => {
             e.preventDefault();
-            applyTranslation("fr");
+            clearTranslateCookie();
+            localStorage.setItem('hlm_lang', 'fr');
+            window.location.reload();
         });
         btnEn.addEventListener("click", (e) => {
             e.preventDefault();
-            applyTranslation("en");
+            setTranslateCookie('/fr/en');
+            localStorage.setItem('hlm_lang', 'en');
+            window.location.reload();
         });
     }
 
@@ -649,12 +598,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
-
-            // Appliquer la traduction si l'anglais était actif
-            const savedLang = localStorage.getItem('hlm_lang') || 'fr';
-            if (savedLang === 'en') {
-                applyTranslation('en');
-            }
         };
 
         // Ajout de la balise script

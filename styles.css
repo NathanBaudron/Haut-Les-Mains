@@ -3491,5 +3491,18 @@ html {
     line-height: 1.5 !important;
 }
 
+/* Prevent French text flash when translation is active */
+html.translating-en body {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+html.translated-ltr body,
+html.translated-rtl body {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: opacity 0.25s ease-in-out !important;
+}
+
 
 
