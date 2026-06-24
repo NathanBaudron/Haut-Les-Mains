@@ -392,33 +392,91 @@
 
 /* 3. Small mobile viewports (under 640px) */
 @media (max-width: 640px) {
+    .container {
+        padding: 0 8px !important;
+    }
+    .internal-content {
+        padding: 12px 8px !important;
+    }
     .cal-cell { 
-        min-height: 52px; 
-        padding: 4px 2px 2px; 
+        min-height: 48px; 
+        padding: 4px 1px 2px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
     .cal-day-num { 
-        width: 18px; 
-        height: 18px; 
+        width: 20px; 
+        height: 20px; 
         font-size: 0.70rem; 
-        margin-bottom: 1px;
+        margin-bottom: 2px;
+    }
+    .cal-pills-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+        margin-top: 1px;
+        width: 100%;
     }
     .cal-pill { 
-        font-size: 0.56rem; 
-        padding: 1px 2px; 
-        border-left-width: 2px;
+        width: 6px !important; 
+        height: 6px !important; 
+        border-radius: 50% !important; 
+        font-size: 0 !important; 
+        padding: 0 !important; 
+        margin: 0 !important; 
+        border: none !important; 
+        display: inline-block !important; 
+        flex-shrink: 0 !important;
     }
+    .cal-pill.continuation {
+        display: none !important;
+    }
+    /* Solid high-contrast backgrounds for dots */
+    .cal-pill.stage   { background: #7c3aed !important; }
+    .cal-pill.bapteme { background: #3b82f6 !important; }
+    .cal-pill.voyage  { background: #f59e0b !important; }
+    .cal-pill.ferme   { background: #ef4444 !important; }
+
     .cal-nav { 
-        padding: 14px 16px; 
+        padding: 12px 14px; 
     }
     .cal-nav-title h2 { 
-        font-size: 1.1rem; 
+        font-size: 1rem; 
+    }
+    .cal-nav-btn {
+        width: 32px;
+        height: 32px;
     }
     .cal-grid-header span { 
         font-size: 0.60rem; 
         padding: 8px 1px; 
     }
     .cal-detail-panel { 
-        padding: 14px; 
+        padding: 12px; 
+    }
+    .cal-filters {
+        gap: 6px !important;
+    }
+    .cal-filter-btn {
+        padding: 5px 10px !important;
+        font-size: 0.72rem !important;
+    }
+    .cal-legend {
+        gap: 8px 12px !important;
+        margin: 12px 0 16px !important;
+    }
+    .cal-legend-item {
+        font-size: 0.72rem !important;
+    }
+    .cal-today-indicator {
+        padding: 4px 10px !important;
+        font-size: 0.72rem !important;
+        margin-left: 0;
+        margin-top: 4px;
     }
 }
 
@@ -854,13 +912,14 @@ function renderCalendar() {
 function makeCell(date, otherMonth) {
     const cell = document.createElement('div');
     cell.className = 'cal-cell' + (otherMonth ? ' other-month' : '') + (sameDay(date, today) ? ' today' : '') + ([0,6].includes(date.getDay()) ? ' weekend-day' : '');
-    cell.innerHTML = `<div><span class="cal-day-num">${date.getDate()}</span></div>`;
+    cell.innerHTML = `<div><span class="cal-day-num">${date.getDate()}</span></div><div class="cal-pills-container"></div>`;
+    const container = cell.querySelector('.cal-pills-container');
     eventsOnDay(date, activeFilter).forEach(ev => {
         const pill = document.createElement('span'), started = isStart(ev, date);
         pill.className = `cal-pill ${ev.type}${!started ? ' continuation' : ''}`;
         pill.textContent = started ? ev.title : '↳ ' + ev.title;
         pill.addEventListener('click', e => { e.stopPropagation(); selectedDay = date; showDetail(date); });
-        cell.appendChild(pill);
+        container.appendChild(pill);
     });
     cell.addEventListener('click', () => { selectedDay = date; showDetail(date); });
     return cell;
