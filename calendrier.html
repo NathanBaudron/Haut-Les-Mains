@@ -337,15 +337,89 @@
     border-radius: 50%;
 }
 
-/* ── Responsive mobile ── */
+/* ── Responsive scaling of the calendar layout ── */
+
+/* 1. Medium viewports (992px to 1199px) */
+@media (max-width: 1199px) {
+    .cal-cell { 
+        min-height: 80px; 
+        padding: 6px 4px; 
+    }
+    .cal-day-num { 
+        width: 24px; 
+        height: 24px; 
+        font-size: 0.78rem; 
+        margin-bottom: 2px;
+    }
+    .cal-pill { 
+        font-size: 0.62rem; 
+        padding: 2px 4px; 
+    }
+    .cal-nav { 
+        padding: 18px 22px; 
+    }
+    .cal-nav-title h2 { 
+        font-size: 1.35rem; 
+    }
+}
+
+/* 2. Tablet viewports (641px to 991px) */
+@media (max-width: 991px) {
+    .cal-cell { 
+        min-height: 70px; 
+        padding: 5px 3px; 
+    }
+    .cal-day-num { 
+        width: 22px; 
+        height: 22px; 
+        font-size: 0.75rem; 
+    }
+    .cal-pill { 
+        font-size: 0.60rem; 
+        padding: 2px 3px; 
+    }
+    .cal-nav { 
+        padding: 16px 20px; 
+    }
+    .cal-nav-title h2 { 
+        font-size: 1.25rem; 
+    }
+    .cal-grid-header span { 
+        font-size: 0.68rem; 
+        padding: 10px 2px; 
+    }
+}
+
+/* 3. Small mobile viewports (under 640px) */
 @media (max-width: 640px) {
-    .cal-cell { min-height: 58px; padding: 5px 3px 4px; }
-    .cal-day-num { width: 22px; height: 22px; font-size: 0.75rem; }
-    .cal-pill { font-size: 0.60rem; padding: 2px 4px; }
-    .cal-nav { padding: 16px 18px; }
-    .cal-nav-title h2 { font-size: 1.2rem; }
-    .cal-grid-header span { font-size: 0.64rem; padding: 8px 2px; }
-    .cal-detail-panel { padding: 16px; }
+    .cal-cell { 
+        min-height: 52px; 
+        padding: 4px 2px 2px; 
+    }
+    .cal-day-num { 
+        width: 18px; 
+        height: 18px; 
+        font-size: 0.70rem; 
+        margin-bottom: 1px;
+    }
+    .cal-pill { 
+        font-size: 0.56rem; 
+        padding: 1px 2px; 
+        border-left-width: 2px;
+    }
+    .cal-nav { 
+        padding: 14px 16px; 
+    }
+    .cal-nav-title h2 { 
+        font-size: 1.1rem; 
+    }
+    .cal-grid-header span { 
+        font-size: 0.60rem; 
+        padding: 8px 1px; 
+    }
+    .cal-detail-panel { 
+        padding: 14px; 
+    }
 }
 
 /* ── Info Google Calendar ── */
@@ -386,7 +460,7 @@
 
     <main class="internal-page">
         <div class="container">
-            <div class="internal-grid">
+            <div class="internal-grid calendar-grid">
 
                 <article class="internal-content">
 
@@ -482,57 +556,13 @@
                     </div>
 
 
-                    <!-- Section news -->
-                    <section class="unified-news-section" style="margin-top: 32px;">
-                        <h2>Inscriptions &amp; Contact</h2>
-                        <div class="news-grid">
-                            <div class="news-card">
-                                <div class="news-card-content">
-                                    <span class="news-tag highlight">Réservation</span>
-                                    <h3>Réserver une date de stage</h3>
-                                    <p>Contactez Stéphane pour réserver votre place. Un acompte de 10 % valide l'inscription.</p>
-                                </div>
-                                <a href="stage-parapente-inscription.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Fiche d'inscription</a>
-                            </div>
-                            <div class="news-card">
-                                <div class="news-card-content">
-                                    <span class="news-tag">Bons Cadeaux</span>
-                                    <h3>Offrez un Bon Cadeau</h3>
-                                    <p>Offrez l'expérience du vol libre à vos proches avec nos bons cadeaux valables 1 an.</p>
-                                </div>
-                                <a href="bons-cadeaux.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">Découvrir</a>
-                            </div>
-                        </div>
-                    </section>
+
 
                 </article>
 
                 <!-- SIDEBAR -->
                 <aside class="internal-sidebar">
-                    <div class="sidebar-card">
-                        <h3>Contact &amp; Réservation</h3>
-                        <div class="sidebar-contact-info">
-                            <div class="sidebar-contact-item">
-                                <span class="sidebar-contact-icon">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
-                                </span>
-                                <div class="sidebar-contact-body">
-                                    <h4>Téléphone / WhatsApp</h4>
-                                    <p><a href="tel:+33695288020">06 95 28 80 20</a></p>
-                                </div>
-                            </div>
-                            <div class="sidebar-contact-item">
-                                <span class="sidebar-contact-icon">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
-                                </span>
-                                <div class="sidebar-contact-body">
-                                    <h4>Adresse de l'école</h4>
-                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="coordonnees.html" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%;">S'inscrire en ligne</a>
-                    </div>
+
 
                     <div class="sidebar-card">
                         <h3>Légende des couleurs</h3>

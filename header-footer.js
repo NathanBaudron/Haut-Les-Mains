@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <li><button class="mobile-panel-trigger" data-target="mobile-panel-hebergement">Hébergement <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></li>
                             <li><button class="mobile-panel-trigger" data-target="mobile-panel-sites">Sites de Vol <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></li>
                             <li><button class="mobile-panel-trigger" data-target="mobile-panel-infos">Infos Pratiques <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></li>
-                            <li><a href="calendrier.html" class="mobile-nav-link ${page === 'calendrier.html' ? 'active' : ''}">📅 Calendrier</a></li>
+                            <li><a href="calendrier.html" class="mobile-nav-link ${page === 'calendrier.html' ? 'active' : ''}">Calendrier</a></li>
                             <li><a href="coordonnees.html" class="mobile-nav-link ${page === 'coordonnees.html' ? 'active' : ''}">S'inscrire</a></li>
                         </ul>
                     </nav>

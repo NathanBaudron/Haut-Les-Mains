@@ -680,7 +680,7 @@ html {
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     height: 100vh;
     background-color: var(--bg-white);
     box-shadow: var(--shadow-xl);
@@ -710,8 +710,8 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    padding-top: calc(var(--header-height) + 12px); /* Spacing for the header/menu toggle button */
+    padding: 16px; /* reduced from 24px to save space */
+    padding-top: calc(var(--header-height) + 8px); /* Spacing for the header/menu toggle button */
     background-color: var(--bg-white);
     transition: transform var(--transition-normal);
     transform: translateX(100%);
@@ -729,12 +729,14 @@ html {
 
 .mobile-panel-title {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin: 12px 0 20px;
+    font-size: 0.95rem; /* same size as triggers and links */
+    font-weight: 700;
+    color: var(--brand-gray-dark);
+    margin: 8px 0 12px; /* reduced margins */
     border-bottom: 2px solid var(--sky-light);
-    padding-bottom: 8px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .mobile-panel-trigger {
@@ -745,8 +747,8 @@ html {
     text-align: left;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 12px 0;
+    font-size: 0.95rem; /* reduced from 1.1rem */
+    padding: 8px 0; /* reduced from 12px */
     background: none;
     border: none;
     border-bottom: 1px solid var(--bg-warm);
@@ -801,8 +803,8 @@ html {
     display: block;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 10px 0;
+    font-size: 0.95rem; /* reduced from 1.1rem */
+    padding: 8px 0; /* reduced from 10px */
     border-bottom: 1px solid var(--bg-warm);
 }
 
@@ -812,9 +814,10 @@ html {
 
 .mobile-panel a {
     display: block;
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem; /* slightly smaller to distinguish content from titles */
     color: var(--text-muted);
-    padding: 8px 0;
+    padding: 5px 0; /* reduced from 8px to save vertical space */
     transition: color var(--transition-fast);
 }
 
@@ -824,12 +827,14 @@ html {
 
 .submenu-subtitle {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.95rem; /* identical font-size as triggers and main links */
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-light);
-    margin: 12px 0 4px;
+    letter-spacing: 0.5px;
+    color: var(--sky-primary); /* distinguished title color */
+    margin: 14px 0 4px;
+    border-bottom: 1px dashed rgba(255, 184, 47, 0.2);
+    padding-bottom: 2px;
 }
 
 .mobile-drawer-footer {
@@ -2066,6 +2071,36 @@ html {
     .top-bar-content {
         justify-content: center;
     }
+
+    /* Mobile Header Layout Enhancements */
+    .header-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .logo {
+        margin-right: 8px;
+        gap: 6px;
+    }
+    
+    .logo-icon {
+        height: 42px; /* More compact logo for mobile screens */
+    }
+    
+    .logo-text {
+        height: 20px;
+    }
+    
+    .header-actions {
+        gap: 16px; /* Spacing between S'inscrire button and menu toggle */
+        margin-left: 8px;
+    }
+    
+    .header-actions .btn {
+        width: auto !important; /* Prevent header button from taking full width */
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
     
     .hero-title {
         font-size: 2.5rem;
@@ -2098,6 +2133,10 @@ html {
 
 /* Responsive: 480px (Smartphones) */
 @media (max-width: 480px) {
+    .header-actions .btn {
+        width: auto !important; /* Enforce auto width on smallest viewports */
+    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -3502,6 +3541,67 @@ html.translated-rtl body {
     opacity: 1 !important;
     pointer-events: auto !important;
     transition: opacity 0.25s ease-in-out !important;
+}
+
+/* Adaptive desktop header layout when translated to English (prevent menu wrapping) */
+html.translated-ltr .desktop-nav > ul > li > a {
+    padding: 8px 11px !important;
+    font-size: 0.85rem !important;
+}
+html.translated-ltr .desktop-nav > ul {
+    gap: 5px !important;
+}
+html.translated-ltr .logo {
+    margin-right: 20px !important;
+}
+
+@media (max-width: 1360px) {
+    html.translated-ltr .desktop-nav > ul > li > a {
+        padding: 8px 8px !important;
+        font-size: 0.8rem !important;
+    }
+    html.translated-ltr .desktop-nav > ul {
+        gap: 3px !important;
+    }
+    html.translated-ltr .logo {
+        margin-right: 12px !important;
+        gap: 6px !important;
+    }
+    html.translated-ltr .logo-text {
+        height: 22px !important;
+    }
+}
+
+/* Calendar page custom grid layout to prevent sidebar squeezing */
+@media (min-width: 1150px) {
+    .calendar-grid {
+        grid-template-columns: 9fr 3fr !important;
+        gap: 40px !important;
+    }
+}
+
+@media (max-width: 1149px) {
+    .calendar-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    .calendar-grid .internal-sidebar {
+        display: block !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Responsive padding adjustments for internal content pages (prevents squeezing) */
+@media (max-width: 991px) {
+    .internal-content {
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .internal-content {
+        padding: 12px !important;
+    }
 }
 
 
