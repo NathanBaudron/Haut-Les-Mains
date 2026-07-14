@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 22px 28px;
-    background: linear-gradient(135deg, #0f2949 0%, #1a4080 100%);
+    background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-hover) 100%);
 }
 .cal-nav-btn {
     width: 40px; height: 40px;
@@ -135,7 +135,7 @@
     flex-shrink: 0;
 }
 .cal-cell.today .cal-day-num {
-    background: #1a4080;
+    background: var(--brand-orange);
     color: white;
     font-weight: 800;
 }
@@ -284,7 +284,7 @@
 }
 .cal-filter-btn:hover { border-color: #c7d5ee; color: var(--text-dark); }
 .cal-filter-btn.active { background: white; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
-.cal-filter-btn[data-type="all"].active    { border-color: #0f2949; color: #0f2949; }
+.cal-filter-btn[data-type="all"].active    { border-color: var(--brand-orange); color: var(--brand-orange); }
 .cal-filter-btn[data-type="stage"].active  { border-color: #7c3aed; color: #7c3aed; }
 .cal-filter-btn[data-type="bapteme"].active{ border-color: #3b82f6; color: #1e40af; }
 .cal-filter-btn[data-type="voyage"].active { border-color: #f59e0b; color: #92400e; }
@@ -333,7 +333,7 @@
 }
 .cal-today-dot {
     width: 10px; height: 10px;
-    background: #1a4080;
+    background: var(--brand-orange);
     border-radius: 50%;
 }
 
@@ -530,6 +530,10 @@
 
                     <h1>Calendrier des Stages &amp; Activités</h1>
 
+                            <div class="content-image-box">
+                                <img src="assets/why_choose_us_hero.png" alt="Saison Parapente" class="content-img">
+                            </div>
+
                     <div class="course-hero-details">
                         <span class="course-badge indigo">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -556,7 +560,7 @@
                     <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom: 20px;">
                         <div class="cal-filters" style="margin:0; flex:1;">
                             <button class="cal-filter-btn active" data-type="all">
-                                <span class="cal-filter-dot" style="background:#0f2949;"></span> Tout
+                                <span class="cal-filter-dot" style="background:var(--brand-orange);"></span> Tout
                             </button>
                             <button class="cal-filter-btn" data-type="stage">
                                 <span class="cal-filter-dot" style="background:#7c3aed;"></span> Stages
