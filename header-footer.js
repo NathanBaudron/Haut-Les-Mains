@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <ul>
                         <li><a href="index.html" class="${page === 'index.html' || page === '' ? 'active' : ''}">Accueil</a></li>
                         <li class="dropdown">
-                            <a href="parapente.html" class="${[ 'stage-parapente-inscription.html', 'parapente-madagascar.html', 'parapente-cycle-2.html', 'stage-parapente-perfect.html', 'parapente-cycle-3.html', 'autonomie-parapente.html', 'parapente-cross-distance.html', 'parapente-italie.html', 'progression-rapide-parapente.html', 'stage-parapente-general.html', 'stage-parapente-initiation.html', 'parapente-thermique.html', 'parapente-maroc.html', 'parapente.html', 'progression-parapente-pib.html', 'voyage.html', 'espagne-organya.html', 'stage-parapente-perf.html', 'parapente-pilotage-actif.html', 'stage-parapente-perfectionnement.html', 'parapente-cycle-1.html', 'SIV-parapente.html', 'controle-parapente-speed.html', 'parapente-colombie.html', 'parapente-chili.html', 'parapente-lac-de-garde.html', 'bapteme-parapente.html', 'bapteme-parapente-generalite.html', 'bapteme-parapente-lavande.html', 'bapteme-parapente-verdon.html', 'bapteme-parapente-sensation.html', 'bapteme-parapente-ce.html', 'bapteme-parapente-acro.html', 'parapente-visio-suivi.html' ].includes(page) ? 'active' : ''}">
+                            <a href="parapente.html" class="${[ 'stage-parapente-inscription.html', 'parapente-madagascar.html', 'parapente-cycle-2.html', 'stage-parapente-perfect.html', 'parapente-cycle-3.html', 'autonomie-parapente.html', 'parapente-cross-distance.html', 'parapente-italie.html', 'progression-rapide-parapente.html', 'stage-parapente-general.html', 'stage-parapente-initiation.html', 'parapente-thermique.html', 'parapente-maroc.html', 'parapente.html', 'progression-parapente-pib.html', 'voyage.html', 'espagne-organya.html', 'stage-parapente-perf.html', 'parapente-pilotage-actif.html', 'stage-parapente-perfectionnement.html', 'parapente-cycle-1.html', 'SIV-parapente.html', 'controle-parapente-speed.html', 'parapente-colombie.html', 'parapente-chili.html', 'parapente-lac-de-garde.html', 'bapteme-parapente.html', 'bapteme-parapente-generalite.html', 'bapteme-parapente-ce.html', 'parapente-visio-suivi.html' ].includes(page) ? 'active' : ''}">
                                 Parapente <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </a>
                             <div class="dropdown-menu megamenu-5col">
@@ -99,11 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <span>Baptêmes Biplace</span>
                                     <a href="bapteme-parapente.html">Présentation & Tarifs</a>
                                     <a href="bapteme-parapente-generalite.html">Généralité Biplace</a>
-                                    <a href="bapteme-parapente-lavande.html">Vol Couleur Lavande</a>
-                                    <a href="bapteme-parapente-verdon.html">Vol Vision Verdon</a>
-                                    <a href="bapteme-parapente-sensation.html">Vol Sensation</a>
                                     <a href="bapteme-parapente-ce.html">Groupe et CE</a>
-                                    <a href="bapteme-parapente-acro.html">Option Voltige</a>
+                                    
                                 </div>
                             </div>
                         </li>
@@ -254,11 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <li class="submenu-subtitle">Baptêmes Biplace</li>
                             <li><a href="bapteme-parapente.html">Présentation & Tarifs</a></li>
                             <li><a href="bapteme-parapente-generalite.html">Généralité Biplace</a></li>
-                            <li><a href="bapteme-parapente-lavande.html">Vol Couleur Lavande</a></li>
-                            <li><a href="bapteme-parapente-verdon.html">Vol Vision Verdon</a></li>
-                            <li><a href="bapteme-parapente-sensation.html">Vol Sensation</a></li>
                             <li><a href="bapteme-parapente-ce.html">Groupe et CE</a></li>
-                            <li><a href="bapteme-parapente-acro.html">Option Voltige</a></li>
+                            <li></li>
                         </ul>
                     </nav>
                 </div>
