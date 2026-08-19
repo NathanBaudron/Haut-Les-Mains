@@ -380,6 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li><a href="meteo.html">Météo & Balises</a></li>
                         <li><a href="parapente-utilitaires.html">Outils pédagogiques</a></li>
                         <li><a href="sitemap.html">Plan du site global</a></li>
+                        <li><a href="appi-pro/index.html" style="color: var(--brand-orange, #f97316); font-weight: 700;">Espace APPI Pro</a></li>
                     </ul>
                 </div>
 
