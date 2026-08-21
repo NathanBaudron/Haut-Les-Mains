@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <script>
@@ -88,13 +88,16 @@
 @media(max-width:1199px){.cal-cell{height:104px;padding:6px 5px}.cal-pill{font-size:.60rem;padding:2px 4px}}
 @media(max-width:991px){.cal-cell{height:88px;padding:5px 3px}.cal-day-num{width:22px;height:22px;font-size:.74rem}.cal-pill{font-size:.58rem;padding:2px 3px}.cal-nav{padding:14px 18px}.cal-grid-header span{font-size:.63rem;padding:8px 2px}.cal-toolbar{padding:10px 14px;gap:8px}}
 @media(max-width:640px){.cal-cell{height:62px;padding:4px 2px;align-items:center}.cal-day-num{width:20px;height:20px;font-size:.65rem;margin-bottom:2px}.cal-pills-container{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2px}.cal-pill{width:7px!important;height:7px!important;border-radius:50%!important;font-size:0!important;padding:0!important;border:none!important;flex-shrink:0!important}.cal-pill.stage{background:#7c3aed!important}.cal-pill.bapteme{background:#2563eb!important}.cal-pill.voyage{background:#d97706!important}.cal-pill.ferme{background:#dc2626!important}.cal-pill.continuation{display:none!important}.cal-more-indicator{display:none}.cal-nav{padding:11px 12px}.cal-nav-title h2{font-size:.95rem}.cal-nav-btn{width:30px;height:30px}.cal-grid-header span{font-size:.56rem;padding:6px 1px}.cal-detail-panel{padding:10px}.cal-toolbar{padding:8px 10px;gap:6px 10px}.cal-filter-btn{padding:4px 9px;font-size:.72rem}.cal-legend-item{font-size:.70rem;gap:5px}.cal-toolbar-legend{gap:5px 10px}}
+/* Pleine largeur sans sidebar */
+.cal-full-layout { width: 100%; }
+.cal-full-layout article.internal-content { max-width: 100%; }
     </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
     <main class="internal-page">
         <div class="container">
-            <div class="internal-grid calendar-grid">
+            <div class="cal-full-layout">
                 <article class="internal-content">
                     <nav class="breadcrumb">
                         <a href="index.html">Accueil</a><span>&gt;</span><span>Calendrier</span>
@@ -157,50 +160,6 @@
                         </div>
                     </div>
                 </article>
-
-                <!-- SIDEBAR -->
-                <aside class="internal-sidebar">
-                    <div class="sidebar-card">
-                        <h3>Legende des couleurs</h3>
-                        <div style="display:flex;flex-direction:column;gap:10px;margin-top:6px;">
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <div style="width:4px;border-radius:4px;background:#7c3aed;align-self:stretch;min-height:34px;flex-shrink:0;"></div>
-                                <div><div style="font-weight:700;font-size:.83rem;color:#5b21b6;">Stage de formation</div><div style="font-size:.76rem;color:var(--text-muted);">Initiation, perf, SIV, controle...</div></div>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <div style="width:4px;border-radius:4px;background:#2563eb;align-self:stretch;min-height:34px;flex-shrink:0;"></div>
-                                <div><div style="font-weight:700;font-size:.83rem;color:#1e40af;">Baptemes biplace</div><div style="font-size:.76rem;color:var(--text-muted);">Journees ou demi-journees</div></div>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <div style="width:4px;border-radius:4px;background:#d97706;align-self:stretch;min-height:34px;flex-shrink:0;"></div>
-                                <div><div style="font-weight:700;font-size:.83rem;color:#92400e;">Voyage / Deplacement</div><div style="font-size:.76rem;color:var(--text-muted);">Lac de Garde, Madagascar...</div></div>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <div style="width:4px;border-radius:4px;background:#dc2626;align-self:stretch;min-height:34px;flex-shrink:0;"></div>
-                                <div><div style="font-weight:700;font-size:.83rem;color:#991b1b;">Ecole fermee</div><div style="font-size:.76rem;color:var(--text-muted);">Vacances, jours feries</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-card">
-                        <h3>Navigation</h3>
-                        <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0;">Utilisez les fleches <strong>←</strong> et <strong>→</strong> du clavier pour naviguer. Cliquez sur un evenement pour ses details.</p>
-                    </div>
-                    <div class="sidebar-card">
-                        <h3>WhatsApp</h3>
-                        <div class="sidebar-contact-info">
-                            <div class="sidebar-contact-item">
-                                <span class="sidebar-contact-icon">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                                </span>
-                                <div class="sidebar-contact-body">
-                                    <h4>WhatsApp</h4>
-                                    <p><a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer">06 95 28 80 20</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;text-align:center;margin-top:12px;display:block;">Reserver par WhatsApp</a>
-                    </div>
-                </aside>
             </div>
         </div>
     </main>
