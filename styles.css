@@ -3712,9 +3712,17 @@ html.translated-ltr .logo {
 .page-hero-banner .breadcrumb span { color: rgba(255,255,255,0.75) !important; }
 .page-hero-banner .breadcrumb span:last-child { color: white !important; }
 .page-hero-banner .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.page-hero-banner .hero-badges .course-badge { opacity: 0.92; }
+.page-hero-banner .hero-badges .course-badge {
+    background: rgba(255,255,255,0.2) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.page-hero-banner .hero-badges .course-badge svg { stroke: white !important; }
 
-.banner-orange  { background: linear-gradient(135deg, var(--brand-orange) 0%, #c2500a 100%); }
+.banner-orange  { background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%); }
 .banner-indigo  { background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); }
 .banner-violet  { background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); }
 .banner-teal    { background: linear-gradient(135deg, #0d9488 0%, #134e4a 100%); }
