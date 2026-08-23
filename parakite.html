@@ -8,11 +8,7 @@
             style.id = 'early-translate-style';
             style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
             document.head.appendChild(style);
-            setTimeout(function() {
-                document.documentElement.classList.remove('translating-en');
-                var el = document.getElementById('early-translate-style');
-                if (el) el.remove();
-            }, 1500);
+            setTimeout(function() { document.documentElement.classList.remove('translating-en'); var el = document.getElementById('early-translate-style'); if (el) el.remove(); }, 1500);
         }
     </script>
     <link rel="icon" type="image/png" href="pictures/logo.png">
@@ -27,116 +23,157 @@
 </head>
 <body>
     <div id="header-placeholder"></div>
+    <main class="internal-page">
+        <div class="container">
+            <div class="internal-grid">
+                <article class="internal-content">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a> 
+                        <span>&gt;</span>
+                        <span>ParaKite</span>
+                    </nav>
 
-    <main class="internal-page full-width-page">
-        <div class="page-hero-banner banner-orange">
-            <div class="container">
-                <nav class="breadcrumb">
-                    <a href="index.html">Accueil</a> 
-                    <span>&gt;</span>
-                    <span>ParaKite</span>
-                </nav>
-                <h1>Portail ParaKite</h1>
-            </div>
-        </div>
+                    <h1>Portail ParaKite</h1>
 
-        <div class="container" style="margin-top: 2rem;">
-            <h2>Découvrez une nouvelle façon d'explorer le ciel</h2>
-            <p class="intro-text">Le <strong>ParaKite</strong> est une innovation majeure qui révolutionne la pratique du vol libre et du soaring. À mi-chemin entre le parapente classique et le kite de puissance, le ParaKite utilise un système de pilotage dynamique aux trims et à l'assiette. Idéal pour le soaring côtier ou en falaise par vent fort, il procure une vitesse, une réactivité et une sécurité passive inédites.</p>
-
-            <div class="lodging-intro-box">
-                « Le ParaKite offre une glisse exceptionnelle, une réactivité fluide aux commandes et des ressources de vitesse hors du commun. C'est le pilotage à l'état pur. Rejoignez l'école Haut les Mains à Barrême pour en maîtriser toutes les subtilités. »
-            </div>
-
-            <h3 class="lodging-section-title">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
-                Nos Formations & Services ParaKite
-            </h3>
-
-            <div class="immersive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 24px 0;">
-                
-                <a href="parakite-general.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">1. Généralités</span>
-                        <div class="immersive-card-title">Généralités ParaKite</div>
-                        <p class="immersive-card-desc">Comprendre la technologie des voiles hybrides, le fonctionnement aérodynamique et les particularités de la pratique du ParaKite en soaring.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <div class="content-image-box">
+                        <img src="assets/sub_parakite.png" alt="ParaKite en vol" class="content-img">
                     </div>
-                </a>
 
-                <a href="parakite-initiation.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #15803d, #14532d);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">2. Initiation</span>
-                        <div class="immersive-card-title">Initiation ParaKite</div>
-                        <p class="immersive-card-desc">Vos premiers pas au sol et dans les airs. Apprentissage du gonflage, gestion de la puissance de l'aile et petits vols en pente école.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <h2>Découvrez une nouvelle façon d'explorer le ciel</h2>
+                    <p class="intro-text">Le <strong>ParaKite</strong> est une innovation majeure qui révolutionne la pratique du vol libre et du soaring. À mi-chemin entre le parapente classique et le kite de puissance, le ParaKite utilise un système de pilotage dynamique aux trims et à l'assiette. Idéal pour le soaring côtier ou en falaise par vent fort, il procure une vitesse, une réactivité et une sécurité passive inédites.</p>
+
+                    <div class="lodging-intro-box">
+                        « Le ParaKite offre une glisse exceptionnelle, une réactivité fluide aux commandes et des ressources de vitesse hors du commun. C'est le pilotage à l'état pur. Rejoignez l'école Haut les Mains à Barrême pour en maîtriser toutes les subtilités. »
                     </div>
-                </a>
 
-                <a href="parakite-perfectionnement.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #4f46e5, #312e81);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">3. Perfectionnement</span>
-                        <div class="immersive-card-title">Perfectionnement</div>
-                        <p class="immersive-card-desc">Perfectionnez votre pilotage en soaring. Maîtrisez le vol dynamique à proximité du relief par vent fort et la gestion de votre vitesse.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <h3 class="lodging-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                        Nos Formations &amp; Services ParaKite
+                    </h3>
+
+                    <div class="immersive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0;">
+                        
+                        <a href="parakite-general.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">1. Généralités</span>
+                                <div class="immersive-card-title">Généralités ParaKite</div>
+                                <p class="immersive-card-desc">Comprendre la technologie des voiles hybrides, le fonctionnement aérodynamique et les particularités de la pratique.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parakite-initiation.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #15803d, #14532d);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">2. Initiation</span>
+                                <div class="immersive-card-title">Initiation ParaKite</div>
+                                <p class="immersive-card-desc">Vos premiers pas au sol et dans les airs. Apprentissage du gonflage, gestion de la puissance et petits vols.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parakite-perfectionnement.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #4f46e5, #312e81);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">3. Perfectionnement</span>
+                                <div class="immersive-card-title">Perfectionnement</div>
+                                <p class="immersive-card-desc">Perfectionnez votre pilotage en soaring. Maîtrisez le vol dynamique à proximité du relief et la vitesse.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parakite-controle.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #ea580c, #9a3412);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">4. Contrôle</span>
+                                <div class="immersive-card-title">Contrôle Technique</div>
+                                <p class="immersive-card-desc">La sécurité de votre aile spécifique. Diagnostics d'usure, calage laser des suspentes et mesures de porosité.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parakite-siv.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #0d9488, #134e4a);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">5. Stage SIV</span>
+                                <div class="immersive-card-title">SIV &amp; Pilotage Avancé</div>
+                                <p class="immersive-card-desc">Comportement aux limites au-dessus de l'eau, gestion des fermetures et sécurité absolue en ParaKite.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
                     </div>
-                </a>
 
-                <a href="parakite-controle.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #f97316, #c2410c);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">4. Contrôle</span>
-                        <div class="immersive-card-title">Contrôle Technique</div>
-                        <p class="immersive-card-desc">La sécurité de votre aile spécifique. Diagnostics d'usure, calage laser des suspentes et mesures de porosité en atelier.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
-                    </div>
-                </a>
-
-                <a href="parakite-siv.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #0d9488, #0f766e);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">5. SIV</span>
-                        <div class="immersive-card-title">Stage SIV ParaKite</div>
-                        <p class="immersive-card-desc">Apprenez à maîtriser les incidents de vol. Simulation d'incidents au-dessus de l'eau pour piloter sereinement en toutes conditions.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
-                    </div>
-                </a>
-
-            </div>
-
-            <section class="unified-news-section" style="margin-top: 4rem;">
-                <h2>Actualités & Bons Cadeaux</h2>
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-card-content">
-                            <span class="news-tag highlight">Idée Cadeau</span>
-                            <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
-                            <p>Faites plaisir à vos proches en offrant un bon cadeau pour un baptême de l'air en Parapente. Valable 1 an.</p>
+                    <section class="unified-news-section">
+                        <h2>Actualités &amp; Bons Cadeaux</h2>
+                        <div class="news-grid">
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag highlight">Idée Cadeau</span>
+                                    <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
+                                    <p>Faites plaisir à vos proches en offrant un bon cadeau pour un vol ou un stage.</p>
+                                </div>
+                                <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag">Nouveauté</span>
+                                    <h3>Formations et Stages Saison 2026</h3>
+                                    <p>Les inscriptions pour la saison 2026 sont ouvertes. Rejoignez-nous en ParaKite.</p>
+                                </div>
+                                <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
+                            </div>
                         </div>
-                        <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-card-content">
-                            <span class="news-tag">Nouveauté</span>
-                            <h3>Formations et Stages Saison 2026</h3>
-                            <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre à voler en Provence.</p>
+                    </section>
+                </article>
+
+                <aside class="internal-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Contact &amp; Réservation</h3>
+                        <div class="sidebar-contact-info">
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer">06 95 28 80 20</a></p>
+                                </div>
+                            </div>
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Adresse de l'école</h4>
+                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
+                                </div>
+                            </div>
                         </div>
-                        <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
+                        <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%; justify-content: center; text-decoration: none;">Réserver par WhatsApp</a>
                     </div>
-                </div>
-            </section>
+
+                    <div class="sidebar-card">
+                        <h3>Newsletter</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Recevez nos actualités et offres de vol libre.</p>
+                        <form name="newsletterform" class="newsletter-form" action="index.html" method="POST" onsubmit="alert('Merci pour votre inscription ! (Démonstration)'); return false;">
+                            <input type="email" name="email" placeholder="Votre email..." required class="newsletter-input" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 12px; box-sizing: border-box;">
+                            <div style="display: flex; gap: 8px;">
+                                <button type="submit" class="btn btn-secondary btn-sm" style="flex: 1; justify-content: center; text-align: center;">Inscription</button>
+                                <button type="button" onclick="alert('Désinscription prise en compte (Démonstration)')" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted); background: none; font-size: 0.8rem; padding: 4px 6px;">Désinscrire</button>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+            </div>
         </div>
     </main>
-
     <div id="footer-placeholder"></div>
     <script src="header-footer.js"></script>
     <script src="script.js"></script>
