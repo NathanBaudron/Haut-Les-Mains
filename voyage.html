@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <script>
@@ -8,161 +8,184 @@
             style.id = 'early-translate-style';
             style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
             document.head.appendChild(style);
-            setTimeout(function() {
-                document.documentElement.classList.remove('translating-en');
-                var el = document.getElementById('early-translate-style');
-                if (el) el.remove();
-            }, 1500);
+            setTimeout(function() { document.documentElement.classList.remove('translating-en'); var el = document.getElementById('early-translate-style'); if (el) el.remove(); }, 1500);
         }
     </script>
-
     <link rel="icon" type="image/png" href="pictures/logo.png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haut les mains : Voyage Parapente - Haut les Mains Barrême</title>
-    <meta name="description" content="Découvrez la page Haut les mains : Voyage Parapente proposée par Haut les Mains, école de parapente et vol libre à Barrême en Provence.">
-    <!-- Google Fonts -->
+    <title>Voyages & Stages Parapente à l'Étranger - Haut les Mains Barrême</title>
+    <meta name="description" content="Voyages et stages parapente guidés à l'étranger : Italie (Lac de Garde), Madagascar, Espagne (Organya), Maroc, Colombie, Chili. Partez voler avec Haut les Mains.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
-
-    <!-- Main Content Area -->
-    <main class="internal-page full-width-page">
+    <main class="internal-page">
         <div class="container">
-            
-            <nav class="breadcrumb">
-                <a href="index.html">Accueil</a> 
-                <span>&gt;</span>
-                <a href="parapente.html">Parapente</a> 
-                <span>&gt;</span>
-                <span>Voyage</span>
-            </nav>
+            <div class="internal-grid">
+                <article class="internal-content">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a> 
+                        <span>&gt;</span>
+                        <span>Voyages</span>
+                    </nav>
 
-            <h1>Voyages Parapente & Pilotage</h1>
+                    <h1>Voyages &amp; Stages à l'Étranger</h1>
 
-            <div class="intro-block" style="max-width: 800px; margin-bottom: 2rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
-                <p class="intro-text" style="margin: 0; font-size: 1.1rem; line-height: 1.5;">
-                    Explorez le monde et parfaire votre technique avec nos voyages et stages à l'étranger. Découvrez des aérologies variées dans un cadre sécurisé et encadré par des professionnels.
-                </p>
-            </div>
-
-            <div class="immersive-grid">
-                
-                <!-- Destination 1: Italie -->
-                <a href="parapente-italie.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Italie</span>
-                        <div class="immersive-card-title">Lac de Garde & Monte Baldo</div>
-                        <p class="immersive-card-desc">SIV et pilotage avancé sur le légendaire Lac de Garde à Malcesine.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <div class="content-image-box">
+                        <img src="assets/sub_voyage.png" alt="Parapente en voyage au-dessus d'un paysage d'exception" class="content-img">
                     </div>
-                </a>
 
-                <!-- Destination 2: Madagascar -->
-                <a href="parapente-madagascar.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #15803d, #14532d);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Madagascar</span>
-                        <div class="immersive-card-title">Thermique & Cross</div>
-                        <p class="immersive-card-desc">Aventure alliant vol libre sur des reliefs sauvages, thermiques généreux et cross-country.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <h2>Explorez les plus beaux spots de vol libre du globe</h2>
+                    <p class="intro-text">L'école Haut les Mains vous emmène voler sur les sites les plus mythiques de la planète. Que ce soit pour un stage SIV sur le splendide Lac de Garde, du soaring infini sur les falaises de Madagascar, de la voltige à Organya ou du cross en Colombie, nos moniteurs vous guident et gèrent toute la logistique.</p>
+
+                    <div class="lodging-intro-box">
+                        « Voyager avec Haut les Mains, c'est l'assurance d'une logistique rodée, de briefings météo quotidiens précis et d'un encadrement sécurisant pour profiter à 100% de chaque vol. »
                     </div>
-                </a>
 
-                <!-- Destination 3: Espagne -->
-                <a href="espagne-organya.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #dc2626, #7f1d1d);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Espagne</span>
-                        <div class="immersive-card-title">Espagne - Organyà</div>
-                        <p class="immersive-card-desc">Site mondial du freestyle à Organyà, ou thermiques d'Andalousie à Algodonales.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
+                    <h3 class="lodging-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        Nos Destinations Phares
+                    </h3>
+
+                    <div class="immersive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0;">
+                        
+                        <a href="parapente-italie.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Italie</span>
+                                <div class="immersive-card-title">Lac de Garde</div>
+                                <p class="immersive-card-desc">SIV et pilotage au Monte Baldo à Malcesine. 1 700 m de gaz au-dessus de l'eau turquoise.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parapente-madagascar.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #15803d, #14532d);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Madagascar</span>
+                                <div class="immersive-card-title">Lac Ampefy</div>
+                                <p class="immersive-card-desc">SIV au treuil, soaring sur crêtes volcaniques et immersion humaine inoubliable.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="espagne-organya.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #dc2626, #7f1d1d);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Espagne</span>
+                                <div class="immersive-card-title">Organya (Pyrénées)</div>
+                                <p class="immersive-card-desc">La Mecque mondiale de l'acrobatie. Rendement thermique phénoménal et rotations infinies.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parapente-maroc.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #d97706, #78350f);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Maroc</span>
+                                <div class="immersive-card-title">Aguergour &amp; Mirleft</div>
+                                <p class="immersive-card-desc">Du soaring océanique aux thermiques généreux du Haut-Atlas marocain en hiver.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parapente-colombie.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #0d9488, #134e4a);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Colombie</span>
+                                <div class="immersive-card-title">Roldanillo (Valle del Cauca)</div>
+                                <p class="immersive-card-desc">Conditions idéales de cross en plaine et thermiques faciles sous les tropiques.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
+                        <a href="parapente-chili.html" class="immersive-card">
+                            <div class="immersive-card-bg" style="background: linear-gradient(135deg, #7c3aed, #4c1d95);"></div>
+                            <div class="immersive-card-overlay"></div>
+                            <div class="immersive-card-content">
+                                <span class="immersive-card-tag">Chili</span>
+                                <div class="immersive-card-title">Iquique (Désert d'Atacama)</div>
+                                <p class="immersive-card-desc">Dune géante de 1 000 m, soaring continu face au Pacifique et repos au décollage.</p>
+                                <span class="immersive-card-arrow">Découvrir →</span>
+                            </div>
+                        </a>
+
                     </div>
-                </a>
 
-                <!-- Destination 4: Le Maroc -->
-                <a href="parapente-maroc.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #d97706, #78350f);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Le Maroc</span>
-                        <div class="immersive-card-title">Aguergour & Aglou</div>
-                        <p class="immersive-card-desc">Soaring de rêve sur les falaises océaniques et vols thermiques au pied de l'Atlas.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
-                    </div>
-                </a>
-
-                <!-- Destination 5: Colombie -->
-                <a href="parapente-colombie.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #0d9488, #134e4a);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Colombie</span>
-                        <div class="immersive-card-title">Valle del Cauca</div>
-                        <p class="immersive-card-desc">Le paradis du vol de distance en hiver dans la plaine de Roldanillo.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
-                    </div>
-                </a>
-
-                <!-- Destination 6: Chili -->
-                <a href="parapente-chili.html" class="immersive-card">
-                    <div class="immersive-card-bg" style="background: linear-gradient(135deg, #7c3aed, #4c1d95);"></div>
-                    <div class="immersive-card-overlay"></div>
-                    <div class="immersive-card-content">
-                        <span class="immersive-card-tag">Chili</span>
-                        <div class="immersive-card-title">Iquique</div>
-                        <p class="immersive-card-desc">Pilotez sur la gigantesque dune d'Iquique, vent de mer régulier et posé plage.</p>
-                        <span class="immersive-card-arrow">Découvrir →</span>
-                    </div>
-                </a>
-
-            </div>
-        
-            <!-- Unified Actualités & Bons Cadeaux Section -->
-            <section class="unified-news-section" style="margin-top: 3rem;">
-                <h2>Actualités & Bons Cadeaux</h2>
-                <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                    <!-- Gift Voucher Card -->
-                    <div class="news-card">
-                        <div class="news-card-content">
-                            <span class="news-tag highlight">Idée Cadeau</span>
-                            <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
-                            <p>Faites plaisir à vos proches en offrant un bon cadeau pour un baptême de l'air en Parapente. Valable 1 an.</p>
+                    <section class="unified-news-section">
+                        <h2>Actualités &amp; Bons Cadeaux</h2>
+                        <div class="news-grid">
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag highlight">Idée Cadeau</span>
+                                    <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
+                                    <p>Faites plaisir à vos proches en offrant un bon cadeau pour un voyage ou un vol.</p>
+                                </div>
+                                <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-content">
+                                    <span class="news-tag">Nouveauté</span>
+                                    <h3>Formations et Stages Saison 2026</h3>
+                                    <p>Les inscriptions pour la saison 2026 sont ouvertes. Rejoignez nos voyages.</p>
+                                </div>
+                                <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
+                            </div>
                         </div>
-                        <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
-                    </div>
-                    
-                    <!-- Last News Card -->
-                    <div class="news-card">
-                        <div class="news-card-content">
-                            <span class="news-tag">Nouveauté</span>
-                            <h3>Formations et Stages Saison 2026</h3>
-                            <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre à voler en Provence.</p>
+                    </section>
+                </article>
+
+                <aside class="internal-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Contact &amp; Réservation</h3>
+                        <div class="sidebar-contact-info">
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer">06 95 28 80 20</a></p>
+                                </div>
+                            </div>
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Adresse de l'école</h4>
+                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
+                                </div>
+                            </div>
                         </div>
-                        <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
+                        <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%; justify-content: center; text-decoration: none;">Réserver par WhatsApp</a>
                     </div>
-                </div>
-            </section>
-            
+
+                    <div class="sidebar-card">
+                        <h3>Newsletter</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Recevez nos actualités et offres de vol libre.</p>
+                        <form name="newsletterform" class="newsletter-form" action="index.html" method="POST" onsubmit="alert('Merci pour votre inscription ! (Démonstration)'); return false;">
+                            <input type="email" name="email" placeholder="Votre email..." required class="newsletter-input" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 12px; box-sizing: border-box;">
+                            <div style="display: flex; gap: 8px;">
+                                <button type="submit" class="btn btn-secondary btn-sm" style="flex: 1; justify-content: center; text-align: center;">Inscription</button>
+                                <button type="button" onclick="alert('Désinscription prise en compte (Démonstration)')" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted); background: none; font-size: 0.8rem; padding: 4px 6px;">Désinscrire</button>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+            </div>
         </div>
     </main>
-
-    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
     <script src="header-footer.js"></script>
     <script src="script.js"></script>
 </body>
