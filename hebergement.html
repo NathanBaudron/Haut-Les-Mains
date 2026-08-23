@@ -52,144 +52,51 @@
     <h1 style="color: white !important; font-size: 2.5rem; margin-bottom: 16px; line-height: 1.2;">Hébergements</h1>
     <p style="font-size: 1.1rem; color: white !important; opacity: 0.95; max-width: 700px; margin: 0 auto; line-height: 1.6;">Pour vos stages de parapente, de vol libre ou vos randonnées dans la vallée de l'Asse, l'école <strong>Haut les Mains</strong> vous propose plusieurs formules d'hébergement chaleureuses et conviviales au centre de Barrême.</p>
 </header>
-<!-- Accommodations Grid -->
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin: 32px 0;">
-                                
-                                <!-- Card 1: Chez Paul et Vivo -->
-                                <div class="site-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                                    <div class="accommodation-gallery">
-                                        <img class="active" src="assets/gite_paul_vivo.png" alt="Gîte Chez Paul et Vivo - Salon">
-                                        <img src="assets/gite.png" alt="Gîte Chez Paul et Vivo - Extérieur">
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev">&#10094;</button>
-                                            <button class="gallery-btn next">&#10095;</button>
-                                        </div>
-                                        <div class="gallery-dots">
-                                            <span class="gallery-dot active"></span>
-                                            <span class="gallery-dot"></span>
-                                        </div>
-                                    </div>
-                                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
-                                        <h3 style="margin-bottom: 12px; border-bottom: 2px solid var(--brand-orange-light); padding-bottom: 6px;">Gîte « Chez Paul et Vivo »</h3>
-                                        <div class="site-card-meta" style="grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px;">
-                                            <div class="site-meta-item"><strong>Capacité & Type</strong>Appartement T3 meublé, Max. 5 personnes</div>
-                                            <div class="site-meta-item"><strong>Équipements</strong>1 chambre double, 1 dortoir, salon avec cheminée, balcon, terrasse, barbecue</div>
-                                        </div>
-                                        <div class="site-card-desc" style="flex-grow: 1;">
-                                            Appartement de 80m² au premier étage avec balcon sur le village et terrasse barbecue. Idéal pour des séjours conviviaux en famille ou entre pilotes.
-                                        </div>
-                                        <a href="gite.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start; width: 100%; justify-content: center;">Voir le descriptif</a>
-                                    </div>
-                                </div>
+<div class="bento-grid">
+    <!-- Bento Item 1: Large Image for main Gite -->
+    <a href="gite.html" class="bento-item bento-span-2 bento-row-2" style="text-decoration: none;">
+        <img src="assets/gite.png" alt="Gte Chez Paul et Vivo" class="bento-img" style="height: 100%; min-height: 400px; filter: brightness(0.75);">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; color: white; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+            <h3 style="font-size: 2.2rem; margin: 0 0 8px 0; font-family: var(--font-heading); color: white;">Gte  Chez Paul et Vivo </h3>
+            <p style="margin: 0; font-size: 1.1rem; opacity: 0.9;">Appartement T3 meubl de 80m. Capacité : 5 personnes.</p>
+        </div>
+    </a>
 
-                                <!-- Card 2: Chez Coco -->
-                                <div class="site-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                                    <div class="accommodation-gallery">
-                                        <img class="active" src="assets/chambre_coco.png" alt="Chambres Chez Coco - Chambre">
-                                        <img src="assets/gite.png" alt="Chambres Chez Coco - Gîte">
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev">&#10094;</button>
-                                            <button class="gallery-btn next">&#10095;</button>
-                                        </div>
-                                        <div class="gallery-dots">
-                                            <span class="gallery-dot active"></span>
-                                            <span class="gallery-dot"></span>
-                                        </div>
-                                    </div>
-                                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
-                                        <h3 style="margin-bottom: 12px; border-bottom: 2px solid var(--brand-orange-light); padding-bottom: 6px;">Chambres d'Hôtes « Chez Coco »</h3>
-                                        <div class="site-card-meta" style="grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px;">
-                                            <div class="site-meta-item"><strong>Capacité & Type</strong>Chambres doubles, 2 personnes par chambre</div>
-                                            <div class="site-meta-item"><strong>Équipements</strong>Grand lit double, salle de bain, cuisine & salon communs, Apple TV, ADSL</div>
-                                        </div>
-                                        <div class="site-card-desc" style="flex-grow: 1;">
-                                            Situé juste au-dessus de l'école de parapente. Chambres d'hôtes idéales pour les pilotes ou randonneurs cherchant la proximité et le calme au centre du village.
-                                        </div>
-                                        <a href="chambredhote.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start; width: 100%; justify-content: center;">Voir le descriptif</a>
-                                    </div>
-                                </div>
+    <!-- Bento Item 2: Colored Text Block -->
+    <div class="bento-item bento-primary">
+        <div class="bento-text-block">
+            <h3>Dormir  Barrme</h3>
+            <p style="margin-bottom: 24px; opacity: 0.9;">Plongez au cœur de la vallée de l'Asse. Nos solutions d'hébergement sont pensées pour les passionnés de vol libre.</p>
+            <a href="dormir.html" class="btn" style="background: white; color: var(--brand-dark); align-self: flex-start;">En savoir plus</a>
+        </div>
+    </div>
 
-                                <!-- Card 3: Chez Lili -->
-                                <div class="site-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                                    <div class="accommodation-gallery">
-                                        <img class="active" src="assets/dortoir_lili.png" alt="Dortoir Chez Lili - Lits">
-                                        <img src="assets/gite.png" alt="Dortoir Chez Lili - Gîte">
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev">&#10094;</button>
-                                            <button class="gallery-btn next">&#10095;</button>
-                                        </div>
-                                        <div class="gallery-dots">
-                                            <span class="gallery-dot active"></span>
-                                            <span class="gallery-dot"></span>
-                                        </div>
-                                    </div>
-                                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
-                                        <h3 style="margin-bottom: 12px; border-bottom: 2px solid var(--brand-orange-light); padding-bottom: 6px;">Le Dortoir « Chez Lili »</h3>
-                                        <div class="site-card-meta" style="grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px;">
-                                            <div class="site-meta-item"><strong>Capacité & Type</strong>Gîte de groupe, 4 lits individuels</div>
-                                            <div class="site-meta-item"><strong>Équipements</strong>Lit simple dans dortoir, cuisine équipée, salon commun, salle d'eau commune, Wifi</div>
-                                        </div>
-                                        <div class="site-card-desc" style="flex-grow: 1;">
-                                            Une formule économique et conviviale, parfaite pour les groupes de pilotes de parapente ou les randonneurs solo de passage dans la vallée de l'Asse.
-                                        </div>
-                                        <a href="chambre.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start; width: 100%; justify-content: center;">Voir le descriptif</a>
-                                    </div>
-                                </div>
+    <!-- Bento Item 3: Dortoir Image -->
+    <a href="chambre.html" class="bento-item" style="text-decoration: none;">
+        <img src="assets/dortoir_lili.png" alt="Dortoir Chez Lili" class="bento-img" style="height: 250px;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; color: white; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+            <h3 style="font-size: 1.4rem; margin: 0; color: white;">Dortoir "Chez Lili"</h3>
+        </div>
+    </a>
 
-                                <!-- Card 4: Chez Angélique -->
-                                <div class="site-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                                    <div class="accommodation-gallery">
-                                        <img class="active" src="assets/gite_angelique.png" alt="Gîte Chez Angélique - Extérieur">
-                                        <img src="assets/gite.png" alt="Gîte Chez Angélique - Façade">
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev">&#10094;</button>
-                                            <button class="gallery-btn next">&#10095;</button>
-                                        </div>
-                                        <div class="gallery-dots">
-                                            <span class="gallery-dot active"></span>
-                                            <span class="gallery-dot"></span>
-                                        </div>
-                                    </div>
-                                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
-                                        <h3 style="margin-bottom: 12px; border-bottom: 2px solid var(--brand-orange-light); padding-bottom: 6px;">Gîte « Chez Angélique »</h3>
-                                        <div class="site-card-meta" style="grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px;">
-                                            <div class="site-meta-item"><strong>Capacité & Type</strong>Maison individuelle, Max. 5 personnes</div>
-                                            <div class="site-meta-item"><strong>Équipements</strong>2 chambres doubles, 1 simple, grand salon avec poêle, terrasse, cuisine équipée</div>
-                                        </div>
-                                        <div class="site-card-desc" style="flex-grow: 1;">
-                                            Situé à seulement 5 minutes de l'école de parapente, profitez d'une maison de 80m² au calme avec une superbe terrasse donnant sur le décollage de la Sapée.
-                                        </div>
-                                        <a href="maison.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start; width: 100%; justify-content: center;">Voir le descriptif</a>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- Unified Actualités & Bons Cadeaux Section -->
-                        <section class="unified-news-section">
-                            <h2>Actualités & Bons Cadeaux</h2>
-                            <div class="news-grid">
-                                <!-- Gift Voucher Card -->
-                                <div class="news-card">
-                                    <div class="news-card-content">
-                                        <span class="news-tag highlight">Idée Cadeau</span>
-                                        <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
-                                        <p>Faites plaisir à vos proches en offrant un bon cadeau pour un baptême de l'air en Parapente. Valable 1 an.</p>
-                                    </div>
-                                    <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
-                                </div>
-                                
-                                <!-- Last News Card -->
-                                <div class="news-card">
-                                    <div class="news-card-content">
-                                        <span class="news-tag">Nouveauté</span>
-                                        <h3>Formations et Stages Saison 2026</h3>
-                                        <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre à voler en Provence.</p>
-                                    </div>
-                                    <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
-                                </div>
-                            </div>
-                        </section>
-            
-                </article>
+    <!-- Bento Item 4: Colored Text Block (Orange) -->
+    <div class="bento-item bento-secondary">
+        <div class="bento-text-block">
+            <h3>Chambre Prive</h3>
+            <p style="margin-bottom: 24px; opacity: 0.9;">Un espace calme avec lit individuel et SDB privative pour un confort maximal.</p>
+            <a href="chambredhote.html" class="btn" style="background: white; color: var(--brand-orange-hover); align-self: flex-start;">Dcouvrir la chambre</a>
+        </div>
+    </div>
+
+    <!-- Bento Item 5: Small Image -->
+    <a href="verdon-campings-restaurants.html" class="bento-item" style="text-decoration: none;">
+        <img src="assets/sub_gite.jpg" alt="Alentours Verdon" class="bento-img" style="height: 250px;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; color: white; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+            <h3 style="font-size: 1.4rem; margin: 0; color: white;">Campings & Restos</h3>
+        </div>
+    </a>
+</div>
+</article>
                 
                 <!-- Sidebar Column -->
                 <aside class="internal-sidebar">
@@ -247,4 +154,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
