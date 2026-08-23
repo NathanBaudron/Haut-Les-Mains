@@ -14,225 +14,200 @@
     <link rel="icon" type="image/png" href="pictures/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bapteme de lair en Parapente Biplace - Haut les Mains Barreme</title>
-    <meta name="description" content="Bapteme de lair en parapente biplace a Barreme (04) : vol biplace depuis les plus beaux sites de Provence, entre 150 et 180 EUR, avec moniteur diplome dEtat. Reservez avec Haut les Mains.">
+    <title>Baptême de l'Air en Parapente Biplace - Haut les Mains Barrême</title>
+    <meta name="description" content="Baptême de l'air en parapente biplace à Barrême (04) : vol biplace depuis les plus beaux sites de Provence, entre 150 et 180 €, avec moniteur diplômé d'État. Réservez avec Haut les Mains.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-/* Layout Hero Split specifique bapteme */
-.bapteme-hero {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 18px;
-    margin-bottom: 36px;
-    display: block;
-}
-@media(max-width:768px){ .bapteme-hero{ height:220px; } }
-
-.bapteme-split {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 32px;
-    align-items: start;
-    margin-bottom: 40px;
-}
-@media(max-width:960px){ .bapteme-split{ grid-template-columns:1fr; } }
-
-.bapteme-prix-card {
-    background: white;
-    border-radius: 16px;
-    border: 2px solid var(--brand-orange);
-    padding: 28px 24px;
-    box-shadow: 0 4px 24px rgba(249,115,22,0.12);
-    position: sticky;
-    top: 24px;
-}
-.bapteme-prix-amount {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: var(--brand-orange);
-    line-height: 1.1;
-    margin: 10px 0 4px;
-}
-.bapteme-prix-label { font-size: 0.80rem; color: #64748b; margin-bottom: 16px; }
-.bapteme-checklist { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 9px; }
-.bapteme-checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    font-size: 0.86rem;
-    color: #374151;
-    line-height: 1.45;
-}
-.bapteme-checklist li::before {
-    content: "";
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    background: #dcfce7;
-    flex-shrink: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 2px;
-}
-.options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-    margin: 24px 0 36px;
-}
-.option-card {
-    background: white;
-    border-radius: 14px;
-    padding: 20px 20px;
-    border: 1px solid #e2e8f4;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: box-shadow 0.18s, transform 0.18s;
-}
-.option-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
-.option-card h4 { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 0 0 8px; }
-.option-card p { font-size: 0.83rem; color: #475569; line-height: 1.6; margin: 0 0 8px; }
-.option-card .option-price { font-weight: 700; font-size: 0.88rem; color: var(--brand-orange); }
-    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
     <main class="internal-page">
         <div class="container">
-            <div class="full-width-page">
+            <div class="internal-grid">
                 <article class="internal-content">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a> 
+                        <span>&gt;</span>
+                        <a href="parapente.html">Parapente</a> 
+                        <span>&gt;</span>
+                        <span>Biplace</span>
+                    </nav>
 
-                    <!-- BANNIERE h1 orange -->
-                    <div class="page-hero-banner banner-orange">
-                        <nav class="breadcrumb">
-                            <a href="index.html">Accueil</a><span>&gt;</span>
-                            <a href="parapente.html">Parapente</a><span>&gt;</span>
-                            <span>Biplace</span>
-                        </nav>
-                        <h1>Bapteme de lair en Parapente Biplace</h1>
-                        <div class="hero-badges">
-                            <span class="course-badge green">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                Vol Biplace
-                            </span>
-                            <span class="course-badge orange">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                                Des 4 Ans
-                            </span>
-                            <span class="course-badge crimson">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                150 - 180 EUR
-                            </span>
-                            <span class="course-badge indigo">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                                Photos &amp; Videos
-                            </span>
+                    <h1>Baptême de l'Air en Parapente Biplace</h1>
+                           
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+                        <span class="course-badge green">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 
+                            Vol Biplace
+                        </span>
+                        <span class="course-badge orange">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> 
+                            Dès 4 Ans
+                        </span>
+                        <span class="course-badge crimson">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 
+                            150 – 180 €
+                        </span>
+                        <span class="course-badge indigo">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> 
+                            Photos &amp; Vidéos
+                        </span>
+                    </div>
+
+                    <p class="intro-text">Découvrez le plaisir absolu du vol libre au-dessus des paysages majestueux des Alpes de Haute-Provence. Accompagné par nos moniteurs diplômés d'État, vous prendrez votre envol en toute sécurité depuis les plus beaux sommets de la région : Barrême, Digne-les-Bains, Oraison et le mythique Mont Lachens. Une aventure inoubliable accessible à tous !</p>
+
+                    <div class="content-image-box">
+                        <img src="assets/sub_bapteme.png" alt="Voiles de parapente au-dessus de Barrême" class="content-img">
+                    </div>
+
+                    <h2>Notre Formule Baptême Biplace</h2>
+                    <div class="lodging-features-grid" style="grid-template-columns: 1fr; margin-bottom: 24px;">
+                        <div class="lodging-feature-card" style="border-top: 4px solid var(--brand-orange);">
+                            <span class="course-badge orange" style="align-self: flex-start;">Baptême de l'Air</span>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: var(--brand-orange); margin: 8px 0;">150 – 180 €</div>
+                            <p style="color: var(--text-main); margin-bottom: 16px;">Découvrez le vol libre en tandem depuis les plus beaux sites de la région avec un moniteur diplômé d'État.</p>
+                            <ul style="margin: 0 !important; padding: 0 !important; list-style: none !important; display: flex; flex-direction: column; gap: 8px;">
+                                <li style="display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.95rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Vol biplace encadré par un moniteur diplômé d'État
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.95rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Décollage depuis les plus beaux sites de Provence (Barrême, Lachens, Digne...)
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.95rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Option voltige acrobatique offerte sur simple demande
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.95rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Navette 4x4 jusqu'au décollage incluse
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.95rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Accessible dès 4 ans (jusqu'à 95 kg)
+                                </li>
+                            </ul>
+                            <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 20px; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                                Réserver mon Baptême par WhatsApp
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- IMAGE HERO pleine largeur -->
-                    <img class="bapteme-hero" src="assets/sub_bapteme.png" alt="Voiles de parapente au-dessus de Barreme">
-
-                    <!-- LAYOUT SPLIT : presentation gauche + tarif droite -->
-                    <div class="bapteme-split">
-
-                        <!-- Colonne gauche : texte presentation -->
-                        <div>
-                            <p class="intro-text" style="margin-bottom:24px;">Decouvrez le plaisir absolu du vol libre au-dessus des paysages majestueux des Alpes de Haute-Provence. Accompagne par nos moniteurs diplomes dEtat, vous prendrez votre envol en toute securite depuis les plus beaux sommets de la region : Barreme, Digne-les-Bains, Oraison et le mythique Mont Lachens. Une aventure inoubliable accessible a tous !</p>
-
-                            <h2 style="margin-top:0;">Options &amp; Offres Speciales</h2>
-                            <div class="options-grid">
-                                <div class="option-card">
-                                    <h4>Option Voltige Acrobatique (Gratuite)</h4>
-                                    <p>Envie de sensations fortes ? Demandez loption voltige a votre moniteur au moment du briefing. Entierement gratuit : virages serres, 360 degrees, wing-overs adaptes a vos envies.</p>
-                                </div>
-                                <div class="option-card">
-                                    <h4>Photos &amp; Videos HD</h4>
-                                    <p>Repartez avec les images de votre vol en haute definition !</p>
-                                    <div class="option-price">30 EUR avec votre carte SD &middot; 40 EUR avec la notre</div>
-                                </div>
-                                <div class="option-card">
-                                    <h4>Tarifs Groupes &amp; CE</h4>
-                                    <p>Des 3 personnes : -5 EUR par vol. A partir de 6 : -8 EUR par vol. Devis sur-mesure pour CE et colonies.</p>
-                                    <a href="bapteme-parapente-ce.html" style="font-size:0.85rem;font-weight:700;color:var(--brand-orange);text-decoration:none;">Decouvrir les offres groupes &rarr;</a>
-                                </div>
-                                <div class="option-card">
-                                    <h4>Deroulement &amp; Infos Pratiques</h4>
-                                    <p>Montee en 4x4 Pajero, preparation au decollage, FAQ complete pour votre premiere experience.</p>
-                                    <a href="bapteme-parapente-generalite.html" style="font-size:0.85rem;font-weight:700;color:var(--brand-orange);text-decoration:none;">Voir le guide pratique &rarr;</a>
-                                </div>
-                            </div>
+                    <h2>Options &amp; Offres Spéciales</h2>
+                    <div class="lodging-features-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 30px;">
+                        <div class="lodging-feature-card">
+                            <h4>Option Voltige Acrobatique (Gratuite)</h4>
+                            <p style="color: var(--text-main);">Envie de sensations fortes ? Demandez l'option voltige à votre moniteur au moment du briefing. C'est entièrement gratuit et comprend des figures dynamiques (virages serrés, 360°, wing-overs) adaptées à vos envies.</p>
+                        </div>
+                        
+                        <div class="lodging-feature-card">
+                            <h4>Photos &amp; Vidéos HD</h4>
+                            <p style="color: var(--text-main);">Repartez avec les images de votre vol en haute définition ! Notre moniteur filme et photographie votre aventure sous différents angles.</p>
+                            <ul style="margin: 0 !important; padding: 0 !important; list-style: none !important; color: var(--text-main);">
+                                <li><strong>30 €</strong> si vous apportez votre propre carte micro SD</li>
+                                <li><strong>40 €</strong> avec une carte SD fournie par l'école</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="lodging-feature-card">
+                            <h4>Tarifs Groupes &amp; CE</h4>
+                            <p style="color: var(--text-main);">Vous venez en famille ou en groupe ? Bénéficiez de remises immédiates dès 3 personnes (-5 € par vol) et à partir de 6 personnes (-8 € par vol).</p>
+                            <a href="bapteme-parapente-ce.html" style="font-weight: 600; font-size: 0.9rem; align-self: flex-start; margin-top: auto; color: var(--brand-orange);">Découvrir les offres groupes &gt;</a>
                         </div>
 
-                        <!-- Colonne droite : card tarif sticky -->
-                        <div>
-                            <div class="bapteme-prix-card">
-                                <span class="course-badge orange" style="align-self:flex-start;">Bapteme de lair</span>
-                                <div class="bapteme-prix-amount">150 - 180 EUR</div>
-                                <div class="bapteme-prix-label">par personne, tout compris</div>
-                                <ul class="bapteme-checklist">
-                                    <li>Vol biplace avec moniteur diplome dEtat</li>
-                                    <li>Decollage depuis les plus beaux sites de Provence</li>
-                                    <li>Option voltige acrobatique offerte</li>
-                                    <li>Navette 4x4 jusqu au decollage incluse</li>
-                                    <li>Accessible des 4 ans (jusqu a 95 kg)</li>
-                                </ul>
-                                <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;text-align:center;display:flex;gap:6px;text-decoration:none;margin-bottom:10px;">
-                                    Reserver par WhatsApp
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
-                                <a href="coordonnees.html" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;text-align:center;display:flex;text-decoration:none;">Nous contacter</a>
-
-                                <div style="margin-top:20px;padding-top:16px;border-top:1px solid #f1f5f9;">
-                                    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#64748b;margin-bottom:8px;">Navigation</div>
-                                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;">
-                                        <li><a href="bapteme-parapente.html" style="color:var(--brand-orange);font-weight:600;font-size:0.88rem;text-decoration:none;">Portail &amp; Tarifs</a></li>
-                                        <li><a href="bapteme-parapente-generalite.html" style="color:#374151;font-size:0.88rem;text-decoration:none;">Generalites &amp; Deroulement</a></li>
-                                        <li><a href="bapteme-parapente-ce.html" style="color:#374151;font-size:0.88rem;text-decoration:none;">Groupes &amp; CE</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="lodging-feature-card">
+                            <h4>Déroulement &amp; Infos Pratiques</h4>
+                            <p style="color: var(--text-main);">Comment se passe la montée en 4x4 Pajero ? Comment se préparer pour le décollage ? Comment éviter le vertige ? Retrouvez toutes les explications.</p>
+                            <a href="bapteme-parapente-generalite.html" style="font-weight: 600; font-size: 0.9rem; align-self: flex-start; margin-top: auto; color: var(--brand-orange);">Voir le guide pratique &gt;</a>
                         </div>
+                    </div>
 
-                    </div><!-- fin bapteme-split -->
-
-                    <!-- INFO ALERT pleine largeur -->
                     <div class="info-alert-box">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                         <div class="info-alert-box-content">
-                            <h4>A prevoir pour votre vol</h4>
-                            <p>Pour votre confort en altitude, veuillez vous munir de baskets ou chaussures de randonnee fermees, lunettes de soleil, creme solaire et un coupe-vent chaud (les temperatures baissent rapidement en altitude !).</p>
+                            <h4>À prévoir pour votre vol</h4>
+                            <p>Pour votre confort en altitude, veuillez vous munir de baskets ou de chaussures de randonnée fermées, de lunettes de soleil, de crème solaire et d'un coupe-vent chaud (les températures baissent rapidement en altitude !).</p>
                         </div>
                     </div>
 
-                    <!-- NEWS GRID -->
+                    <!-- Unified Actualités & Bons Cadeaux Section -->
                     <section class="unified-news-section">
-                        <h2>Actualites &amp; Bons Cadeaux</h2>
+                        <h2>Actualités &amp; Bons Cadeaux</h2>
                         <div class="news-grid">
                             <div class="news-card">
                                 <div class="news-card-content">
-                                    <span class="news-tag highlight">Idee Cadeau</span>
+                                    <span class="news-tag highlight">Idée Cadeau</span>
                                     <h3>Offrez un Bon Cadeau pour un vol inoubliable</h3>
-                                    <p>Faites plaisir a vos proches en offrant un bon cadeau pour un bapteme de lair en Parapente. Valable 1 an.</p>
+                                    <p>Faites plaisir à vos proches en offrant un bon cadeau pour un baptême de l'air en Parapente. Valable 1 an.</p>
                                 </div>
-                                <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top:16px;align-self:flex-start;">Offrir un Bon Cadeau</a>
+                                <a href="bons-cadeaux.html" class="btn btn-primary btn-sm" style="margin-top: 16px; align-self: flex-start;">Offrir un Bon Cadeau</a>
                             </div>
+                            
                             <div class="news-card">
                                 <div class="news-card-content">
-                                    <span class="news-tag">Nouveaute</span>
+                                    <span class="news-tag">Nouveauté</span>
                                     <h3>Formations et Stages Saison 2026</h3>
-                                    <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre a voler en Provence.</p>
+                                    <p>Les inscriptions pour la saison de vol libre 2026 sont officiellement ouvertes chez Haut les Mains. Rejoignez-nous pour apprendre à voler en Provence.</p>
                                 </div>
-                                <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top:16px;align-self:flex-start;">Sinscrire a un stage</a>
+                                <a href="stage-parapente-inscription.html" class="btn btn-secondary btn-sm" style="margin-top: 16px; align-self: flex-start;">S'inscrire à un stage</a>
                             </div>
                         </div>
                     </section>
-
+        
                 </article>
+                
+                <!-- Sidebar Column -->
+                <aside class="internal-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Notre offre Biplace</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                            <li><a href="bapteme-parapente.html" style="color: var(--sky-primary); font-weight: 600; text-decoration: none; border-bottom: none; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Portail &amp; Tarifs</a></li>
+                            <li><a href="bapteme-parapente-generalite.html" style="color: var(--text-main); text-decoration: none; border-bottom: none; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Généralités &amp; Déroulement</a></li>
+                            <li><a href="bapteme-parapente-ce.html" style="color: var(--text-main); text-decoration: none; border-bottom: none; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Groupes &amp; CE</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3>Contact &amp; Réservation</h3>
+                        <div class="sidebar-contact-info">
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 1.72v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer">06 95 28 80 20</a></p>
+                                </div>
+                            </div>
+                            <div class="sidebar-contact-item">
+                                <span class="sidebar-contact-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                                </span>
+                                <div class="sidebar-contact-body">
+                                    <h4>Adresse de l'école</h4>
+                                    <p>Haut les Mains<br>Le village, 04330 Barrême</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/33695288020" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block" style="margin-top: 20px; display: flex; width: 100%; justify-content: center; text-decoration: none;">Réserver par WhatsApp</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Newsletter</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Recevez nos actualités et offres de vol libre.</p>
+                        <form name="newsletterform" class="newsletter-form" action="index.html" method="POST" onsubmit="alert('Merci pour votre inscription ! (Démonstration)'); return false;">
+                            <input type="email" name="email" placeholder="Votre email..." required class="newsletter-input" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 12px; box-sizing: border-box;">
+                            <div style="display: flex; gap: 8px;">
+                                <button type="submit" class="btn btn-secondary btn-sm" style="flex: 1; justify-content: center; text-align: center;">Inscription</button>
+                                <button type="button" onclick="alert('Désinscription prise en compte (Démonstration)')" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted); background: none; font-size: 0.8rem; padding: 4px 6px;">Désinscrire</button>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
             </div>
         </div>
     </main>
