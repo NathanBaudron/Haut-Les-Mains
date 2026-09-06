@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 /* ==========================================================================
    HAUT LES MAINS - MODERNIZED DESIGN SYSTEM & STYLES (Orange & Gray brand identity)
@@ -97,15 +97,6 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     font-size: 16px;
-}
-
-/* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body {
@@ -413,15 +404,6 @@ iframe.goog-te-banner-frame {
 .goog-te-gadget-simple img,
 .goog-te-menu-value span {
     display: none !important;
-}
-
-/* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body {
@@ -1285,16 +1267,7 @@ html {
     background-color: var(--nature-secondary);
 }
 
-.card-/* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-body {
+.card-body {
     padding: 28px;
     flex-grow: 1;
     display: flex;
@@ -1385,16 +1358,7 @@ body {
     border-radius: 50px;
 }
 
-.stage-card-/* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-body {
+.stage-card-body {
     padding: 28px;
 }
 
@@ -1419,7 +1383,7 @@ body {
 }
 
 .stage-details-list li::before {
-    content: "â€¢";
+    content: "•";
     color: var(--sky-primary);
     font-size: 1.5rem;
     position: absolute;
@@ -1486,7 +1450,7 @@ body {
 }
 
 .activity-list li::before {
-    content: "â€º";
+    content: "›";
     position: absolute;
     left: 0;
     top: -2px;
@@ -2457,7 +2421,7 @@ body {
 }
 
 .internal-content ul li::before {
-    content: "â€¢";
+    content: "•";
     color: var(--brand-orange);
     font-weight: bold;
     font-size: 1.2rem;
@@ -2705,7 +2669,7 @@ body {
     padding: 0;
 }
 
-/* Unified ActualitÃ©s & Promo Section */
+/* Unified Actualités & Promo Section */
 .unified-news-section {
     margin-top: 40px;
     border-top: 1px solid var(--border-color);
@@ -2726,7 +2690,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ActualitÃ©s & Agenda Page Grid */
+/* Actualités & Agenda Page Grid */
 .news-page-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -3335,7 +3299,7 @@ body {
 }
 
 .lodging-feature-card ul li::before {
-    content: "âœ“" !important;
+    content: "✓" !important;
     color: var(--brand-orange);
     font-weight: bold;
     font-size: 0.9rem;
@@ -3641,31 +3605,13 @@ body {
 }
 
 /* Prevent French text flash when translation is active */
-html.translating-en /* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-body {
+html.translating-en body {
     opacity: 0 !important;
     pointer-events: none !important;
 }
 
 html.translated-ltr body,
-html.translated-rtl /* Smooth Page Load Transition */
-@keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main {
-    animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-body {
+html.translated-rtl body {
     opacity: 1 !important;
     pointer-events: auto !important;
     transition: opacity 0.25s ease-in-out !important;
@@ -3735,15 +3681,15 @@ html.translated-ltr .logo {
 
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   LAYOUTS UTILITAIRES â€” Refonte mise en page unique par page
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ═══════════════════════════════════════════════════════════
+   LAYOUTS UTILITAIRES — Refonte mise en page unique par page
+   ═══════════════════════════════════════════════════════════ */
 
 /* Pleine largeur sans sidebar */
 .full-width-page { width: 100%; }
 .full-width-page article.internal-content { max-width: 100%; }
 
-/* BanniÃ¨re h1 pleine largeur â€” fond dÃ©gradÃ© */
+/* Bannière h1 pleine largeur — fond dégradé */
 .page-hero-banner {
     border-radius: 16px;
     padding: 40px 48px;
@@ -3789,7 +3735,7 @@ html.translated-ltr .logo {
 .banner-dark    { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
 .banner-blue    { background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%); }
 
-/* Layout 2 colonnes (60/40) â€” timeline + pratique */
+/* Layout 2 colonnes (60/40) — timeline + pratique */
 .two-col-layout {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -3835,7 +3781,7 @@ html.translated-ltr .logo {
 }
 @media (max-width: 768px) { .hero-image-full { height: 200px; } }
 
-/* Sections alternÃ©es image/texte */
+/* Sections alternées image/texte */
 .alt-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -3937,7 +3883,7 @@ html.translated-ltr .logo {
 /* NOUVEAUX LAYOUTS VARIES (V2) - BENTO, OFFSET, ZIG-ZAG, TIMELINE */
 /* ============================================================== */
 
-/* 1. Layout Bento / MosaÃ¯que */
+/* 1. Layout Bento / Mosaïque */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -3981,7 +3927,7 @@ html.translated-ltr .logo {
     .bento-row-2 { grid-row: span 2; }
 }
 
-/* 2. Layout Ã‰ditorial / Offset Box */
+/* 2. Layout Éditorial / Offset Box */
 .editorial-hero {
     position: relative;
     margin-bottom: 64px;
@@ -4086,5 +4032,4 @@ html.translated-ltr .logo {
 }
 .timeline-content h3 { margin-top: 0; color: var(--brand-dark); font-size: 1.4rem; font-family: var(--font-heading); }
 .timeline-step-meta { font-size: 0.85rem; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: block; }
-
 
