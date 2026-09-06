@@ -6,13 +6,28 @@
             document.documentElement.classList.add('translating-en');
             var style = document.createElement('style');
             style.id = 'early-translate-style';
-            style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
+            style.innerHTML = 
+                html.translating-en:not(.translated-ltr):not(.translated-rtl) body > *:not(#translation-loader) { opacity: 0 !important; pointer-events: none; }
+                #translation-loader { position: fixed; inset: 0; background: #ffffff; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif; color: #ea580c; transition: opacity 0.4s ease; }
+                .translation-spinner { width: 40px; height: 40px; border: 4px solid #f3f4f6; border-top: 4px solid #ea580c; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px; }
+                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                html.translated-ltr #translation-loader { opacity: 0; pointer-events: none; }
+            ;
             document.head.appendChild(style);
+            var checkBody = setInterval(function() {
+                if (document.body) {
+                    clearInterval(checkBody);
+                    var loader = document.createElement('div');
+                    loader.id = 'translation-loader';
+                    loader.innerHTML = '<div class="translation-spinner"></div><div style="font-weight: 600;">Translating...</div>';
+                    document.body.appendChild(loader);
+                }
+            }, 10);
             setTimeout(function() {
                 document.documentElement.classList.remove('translating-en');
-                var el = document.getElementById('early-translate-style');
-                if (el) el.remove();
-            }, 1500);
+                var loader = document.getElementById('translation-loader');
+                if (loader) { loader.style.opacity = '0'; setTimeout(function() { loader.remove(); }, 500); }
+            }, 4000);
         }
     </script>
 
@@ -149,16 +164,16 @@
                     </div>
 
                     <!-- Unified Actualités & Bons Cadeaux Section -->
-                    <section class="unified-news-section">
         </div>
         <div class="zigzag-image">
             <img src="assets/barreme_hero.png" alt="Questions Fréquentes (FAQ)" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-md); object-fit: cover; width: 100%; height: 250px;">
         </div>
     </div>
-    <div class="zigzag-row">
-        <div class="zigzag-content">
-            <h3>Actualités &amp; Bons Cadeaux</h3>
-            <div class="news-grid">
+</div>
+
+<section class="unified-news-section">
+                        <h2>Actualités &amp; Bons Cadeaux</h2>
+                        <div class="news-grid">
                             <!-- Gift Voucher Card -->
                             <div class="news-card">
                                 <div class="news-card-content">
@@ -180,12 +195,6 @@
                             </div>
                         </div>
                     </section>
-        </div>
-        <div class="zigzag-image">
-            <img src="assets/hero.png" alt="Actualités &amp; Bons Cadeaux" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-md); object-fit: cover; width: 100%; height: 250px;">
-        </div>
-    </div>
-</div>
 </article>
                 
                 <!-- Sidebar Column -->
@@ -257,6 +266,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
