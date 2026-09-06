@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script>
+        if (localStorage.getItem('hlm_lang') === 'en') {
+            document.documentElement.classList.add('translating-en');
+            var style = document.createElement('style');
+            style.id = 'early-translate-style';
+            style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
+            document.head.appendChild(style);
+            setTimeout(function() {
+                document.documentElement.classList.remove('translating-en');
+                var el = document.getElementById('early-translate-style');
+                if (el) el.remove();
+            }, 1500);
+        }
+    </script>
+    <link rel="icon" type="image/png" href="pictures/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialit - Haut les Mains Barrme</title>
+    <meta name="description" content="Politique de confidentialit de Haut les Mains, cole de parapente. Protection de vos donnes personnelles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="internal-page">
+        <div class="container">
+            <div class="internal-grid">
+                <article class="internal-content">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Accueil</a> 
+                        <span>&gt;</span>
+                        <span>Politique de confidentialit</span>
+                    </nav>
+                    <header class="page-hero-banner" style="background: linear-gradient(135deg, var(--brand-orange), #c25200); padding: 48px 32px; border-radius: var(--radius-xl); margin-bottom: 40px; text-align: center;">
+                        <h1 style="color: white !important; font-size: 2.5rem; margin-bottom: 16px; line-height: 1.2;">Politique de confidentialit</h1>
+                    </header>
+                    
+                    <h2>1. Collecte des donnes</h2>
+                    <p>Dans le cadre de nos activits (rservations de vols, inscriptions aux stages, hbergements), nous sommes amens  collecter certaines donnes personnelles : nom, prnom, adresse e-mail, numro de tlphone, et informations lies  votre niveau de pratique du parapente ou  votre assurance.</p>
+                    
+                    <h2>2. Utilisation des donnes</h2>
+                    <p>Les informations recueillies sont utilises exclusivement pour :</p>
+                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-main);">
+                        <li>Le traitement de vos rservations et inscriptions.</li>
+                        <li>La communication concernant votre sjour ou vos stages.</li>
+                        <li>L'envoi d'informations ou d'actualits si vous vous tes inscrit  notre newsletter.</li>
+                        <li>La souscription d'assurances professionnelles ou fderales lies  la pratique du parapente.</li>
+                    </ul>
+
+                    <h2>3. Protection et conservation</h2>
+                    <p>Vos donnes sont stockes de manire scurise et ne sont accessibles qu'au personnel de Haut les Mains ncessitant ces informations pour l'exercice de leurs fonctions. Elles ne sont en aucun cas vendues ou cdes  des tiers  des fins commerciales.</p>
+
+                    <h2>4. Vos droits (RGPD)</h2>
+                    <p>Conformment au Rglement Gnral sur la Protection des Donnes (RGPD), vous disposez d'un droit d'accs, de rectification, de suppression et d'opposition concernant vos donnes personnelles. Vous pouvez exercer ce droit en nous contactant par e-mail  : <strong>stephane@wanadoo.fr</strong></p>
+
+                    <h2>5. Cookies</h2>
+                    <p>Notre site utilise quelques cookies techniques ncessaires  son bon fonctionnement (ex: conservation de vos prfrences de navigation). Vous pouvez configurer votre navigateur pour refuser les cookies, cependant certaines fonctionnalits du site pourraient s'en trouver altres.</p>
+                </article>
+                
+                <aside class="internal-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Nous contacter</h3>
+                        <p>Pour toute question sur vos donnes :</p>
+                        <p style="margin-top: 10px; font-weight: 500;">Haut les Mains</p>
+                        <p>Le village, 04330 Barrme</p>
+                        <p>Tlp. : 04 92 34 34 00</p>
+                        <p>stephane@wanadoo.fr</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="header-footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
