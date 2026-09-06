@@ -6,13 +6,28 @@
             document.documentElement.classList.add('translating-en');
             var style = document.createElement('style');
             style.id = 'early-translate-style';
-            style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
+            style.innerHTML = 
+                html.translating-en:not(.translated-ltr):not(.translated-rtl) body > *:not(#translation-loader) { opacity: 0 !important; pointer-events: none; }
+                #translation-loader { position: fixed; inset: 0; background: #ffffff; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif; color: #ea580c; transition: opacity 0.4s ease; }
+                .translation-spinner { width: 40px; height: 40px; border: 4px solid #f3f4f6; border-top: 4px solid #ea580c; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px; }
+                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                html.translated-ltr #translation-loader { opacity: 0; pointer-events: none; }
+            ;
             document.head.appendChild(style);
+            var checkBody = setInterval(function() {
+                if (document.body) {
+                    clearInterval(checkBody);
+                    var loader = document.createElement('div');
+                    loader.id = 'translation-loader';
+                    loader.innerHTML = '<div class="translation-spinner"></div><div style="font-weight: 600;">Translating...</div>';
+                    document.body.appendChild(loader);
+                }
+            }, 10);
             setTimeout(function() {
                 document.documentElement.classList.remove('translating-en');
-                var el = document.getElementById('early-translate-style');
-                if (el) el.remove();
-            }, 1500);
+                var loader = document.getElementById('translation-loader');
+                if (loader) { loader.style.opacity = '0'; setTimeout(function() { loader.remove(); }, 500); }
+            }, 4000);
         }
     </script>
 
@@ -76,11 +91,8 @@
                                 <img src="assets/sub_parakite_general.png" alt="Voile de parapente en Provence" class="content-img">
                             </div>
 
-                    <div class="zigzag-section">
-    <div class="zigzag-row">
-        <div class="zigzag-content">
-            <h3>La révolution des voiles hybrides</h3>
-            <p class="intro-text">Le concept du <strong>ParaKite</strong> repose sur une innovation aérodynamique majeure : la combinaison d'une structure mono-surface à caissons et d'un système de pilotage directement relié aux élévateurs et aux trims. Cette architecture permet d'ajuster en temps réel l'assiette et l'angle d'incidence de l'aile. Il en résulte une maniabilité exceptionnelle, une stabilité impressionnante dans les turbulences et une plage de vitesse étendue.</p>
+                    <h2>La révolution des voiles hybrides</h2>
+                    <p class="intro-text">Le concept du <strong>ParaKite</strong> repose sur une innovation aérodynamique majeure : la combinaison d'une structure mono-surface à caissons et d'un système de pilotage directement relié aux élévateurs et aux trims. Cette architecture permet d'ajuster en temps réel l'assiette et l'angle d'incidence de l'aile. Il en résulte une maniabilité exceptionnelle, une stabilité impressionnante dans les turbulences et une plage de vitesse étendue.</p>
 
                     <div class="lodging-intro-box">
                         « Avec le ParaKite, le soaring prend une tout autre dimension. La voile s'adapte instantanément aux variations de vent, permettant de voler en sécurité dans des brises soutenues qui cloueraient au sol un parapente classique. C'est l'outil ultime pour jouer avec le relief. »
@@ -126,15 +138,8 @@
 
                     <!-- Unified Actualités & Bons Cadeaux Section -->
                     <section class="unified-news-section">
-        </div>
-        <div class="zigzag-image">
-            <img src="assets/hero.png" alt="La révolution des voiles hybrides" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-md); object-fit: cover; width: 100%; height: 250px;">
-        </div>
-    </div>
-    <div class="zigzag-row reverse">
-        <div class="zigzag-content">
-            <h3>Actualités & Bons Cadeaux</h3>
-            <div class="news-grid">
+                        <h2>Actualités & Bons Cadeaux</h2>
+                        <div class="news-grid">
                             <!-- Gift Voucher Card -->
                             <div class="news-card">
                                 <div class="news-card-content">
@@ -156,13 +161,8 @@
                             </div>
                         </div>
                     </section>
-        </div>
-        <div class="zigzag-image">
-            <img src="assets/barreme_hero.png" alt="Actualités & Bons Cadeaux" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-md); object-fit: cover; width: 100%; height: 250px;">
-        </div>
-    </div>
-</div>
-</article>
+        
+                </article>
                 
                 <!-- Sidebar Column -->
                 <aside class="internal-sidebar">
