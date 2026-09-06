@@ -6,13 +6,28 @@
             document.documentElement.classList.add('translating-en');
             var style = document.createElement('style');
             style.id = 'early-translate-style';
-            style.innerHTML = 'html.translating-en:not(.translated-ltr):not(.translated-rtl) body { opacity: 0 !important; }';
+            style.innerHTML = 
+                html.translating-en:not(.translated-ltr):not(.translated-rtl) body > *:not(#translation-loader) { opacity: 0 !important; pointer-events: none; }
+                #translation-loader { position: fixed; inset: 0; background: #ffffff; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif; color: #ea580c; transition: opacity 0.4s ease; }
+                .translation-spinner { width: 40px; height: 40px; border: 4px solid #f3f4f6; border-top: 4px solid #ea580c; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px; }
+                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                html.translated-ltr #translation-loader { opacity: 0; pointer-events: none; }
+            ;
             document.head.appendChild(style);
+            var checkBody = setInterval(function() {
+                if (document.body) {
+                    clearInterval(checkBody);
+                    var loader = document.createElement('div');
+                    loader.id = 'translation-loader';
+                    loader.innerHTML = '<div class="translation-spinner"></div><div style="font-weight: 600;">Translating...</div>';
+                    document.body.appendChild(loader);
+                }
+            }, 10);
             setTimeout(function() {
                 document.documentElement.classList.remove('translating-en');
-                var el = document.getElementById('early-translate-style');
-                if (el) el.remove();
-            }, 1500);
+                var loader = document.getElementById('translation-loader');
+                if (loader) { loader.style.opacity = '0'; setTimeout(function() { loader.remove(); }, 500); }
+            }, 4000);
         }
     </script>
 
@@ -196,4 +211,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
